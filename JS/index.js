@@ -25,3 +25,19 @@
 
 // let defaultsVariableValue;
 // console.log(defaultsVariableValue);  // its default value is = undefined
+
+//  .........   Data Types  .........
+
+// In JS, we have two types one is "Primitive(also called Value Types" and another type is
+// Reference Types
+// List of Primitives:
+// String, Numbers, Boolean, Null, undefined
+
+let name = "Rameez"; // String Literal
+console.log(typeof name);
+let age = 23; // Number Literal
+let genderMale = ture; // Boolean Literal
+let lastName = undefined;
+console.log(typeof lastName);
+let result = null; // explicity set a variable with no value
+console.log(typeof result); //  its type is 'object'
