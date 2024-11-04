@@ -99,24 +99,33 @@
 // Functions are the fundamentals building blocks of programing laguages
 
 // this function not return anything
-function greet(name, lastName) {
-  // Variable-Name is the parameter(Reciving argument), its not
-  //accessible outside the function
-  console.log("Hello " + name + " " + lastName);
-}
+// function greet(name, lastName) {
+//   // Variable-Name is the parameter(Reciving argument), its not
+//   //accessible outside the function
+//   console.log("Hello " + name + " " + lastName);
+// }
 
 // If we call function with less number of arguments TouchEvent, remaing parametrs will be undefined
 // that is default. Demo:
 
-greet("Salam"); // Function output: Hello Salam undefined
+// greet("Salam"); // Function output: Hello Salam undefined
 
-greet("Rameez", "Ashraf"); // This is argument( Argument is the actual value that we pass to the fuction)
+// greet("Rameez", "Ashraf"); // This is argument( Argument is the actual value that we pass to the fuction)
 
-// Types of Functions(Function with return)
+// // Types of Functions(Function with return)
 
-function square(num) {
-  return num * num;
-}
+// function square(num) {
+//   return num * num;
+// }
 
-let number = square(5);
-console.log(number);
+// let number = square(5);
+// console.log(number);
+
+// ....     String as Array
+
+let str = "Rameez";
+console.log(typeof str); // String Type
+// can be treted as array
+console.log(str[4]);
+
+console.log(str.indexOf("e")); // It will return index of last 'e'
