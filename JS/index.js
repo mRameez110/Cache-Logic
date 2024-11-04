@@ -44,12 +44,37 @@
 
 //  Dynamic Typing(Type of variable change at run time)
 // This is the feature that different JS language form another languages
-let name4 = "Rameez";
-console.log(typeof name4);
-name4 = 5;
-console.log(typeof name4);
 
-//  in Js all number is type of number,  not float, double etc
-let num1 = 5;
-let num2 = 5.3; // both have same type number
-console.log(typeof (num1, num2));
+// let name4 = "Rameez";
+// console.log(typeof name4);
+// name4 = 5;
+// console.log(typeof name4);
+
+// //  in Js all number is type of number,  not float, double etc
+// let num1 = 5;
+// let num2 = 5.3; // both have same type number
+// console.log(typeof (num1, num2));
+
+//  .... List of reference types ...
+//      Object, Array, Function
+
+// What is Object? In programing languages, Objects are the properties of real life objects
+// such as name, age, address etc are properties of Person Objects
+
+// Objects have key values pairs
+let person = {
+  name: "M Sheikh",
+  age: 23,
+};
+console.log(person);
+
+// Two ways to access the object properties(By Dot notation and by Bracket Notation)
+
+person.name = "M Rameez";
+console.log(person);
+person["name"] = "M Ashraf"; // Write name of property-Name in single/double quote, single quote
+// is preferable
+console.log(person);
+
+// When Bracket notation? When we need to acces/modify property dynamically or cuurently dont know
+// // the property in that case its good to use Bracket Notation.
