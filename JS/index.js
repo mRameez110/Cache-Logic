@@ -87,8 +87,36 @@
 // type of elements like in other progmaing languages
 // Note: Technically array is an object
 
-let selected_color = ["red", "green"];
-selected_color[2] = "blue"; // In JS Array is dyamic
-selected_color[3] = 8;
-console.log(selected_color);
-console.log(typeof selected_color); // its show type = object, so Array is object
+// let selected_color = ["red", "green"];
+// selected_color[2] = "blue"; // In JS Array is dyamic
+// selected_color[3] = 8;
+// console.log(selected_color);
+// console.log(typeof selected_color); // its show type = object, so Array is object
+
+//    Functions
+
+// What is Function? A function is set of statement that perform a task and return the result's.
+// Functions are the fundamentals building blocks of programing laguages
+
+// this function not return anything
+function greet(name, lastName) {
+  // Variable-Name is the parameter(Reciving argument), its not
+  //accessible outside the function
+  console.log("Hello " + name + " " + lastName);
+}
+
+// If we call function with less number of arguments TouchEvent, remaing parametrs will be undefined
+// that is default. Demo:
+
+greet("Salam"); // Function output: Hello Salam undefined
+
+greet("Rameez", "Ashraf"); // This is argument( Argument is the actual value that we pass to the fuction)
+
+// Types of Functions(Function with return)
+
+function square(num) {
+  return num * num;
+}
+
+let number = square(5);
+console.log(number);
