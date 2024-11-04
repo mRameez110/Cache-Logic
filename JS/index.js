@@ -1,6 +1,4 @@
-// console.log("1");
-
-// let vs var
+// .......   let vs var  ..........
 
 // Var
 // The variables that are defined with var statement have function scope.
@@ -22,3 +20,8 @@
 //   console.log(y); // Error (Not accessible, since y is block-scoped)
 // }
 // testVarLet();
+
+//  Default value of variable is unefined: Demo Below
+
+// let defaultsVariableValue;
+// console.log(defaultsVariableValue);  // its default value is = undefined
