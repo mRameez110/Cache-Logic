@@ -62,19 +62,33 @@
 // such as name, age, address etc are properties of Person Objects
 
 // Objects have key values pairs
-let person = {
-  name: "M Sheikh",
-  age: 23,
-};
-console.log(person);
+// let person = {
+//   name: "M Sheikh",
+//   age: 23,
+// };
+// console.log(person);
 
-// Two ways to access the object properties(By Dot notation and by Bracket Notation)
+// // Two ways to access the object properties(By Dot notation and by Bracket Notation)
 
-person.name = "M Rameez";
-console.log(person);
-person["name"] = "M Ashraf"; // Write name of property-Name in single/double quote, single quote
-// is preferable
-console.log(person);
+// person.name = "M Rameez";
+// console.log(person);
+// person["name"] = "M Ashraf"; // Write name of property-Name in single/double quote, single quote
+// // is preferable
+// console.log(person);
 
 // When Bracket notation? When we need to acces/modify property dynamically or cuurently dont know
 // // the property in that case its good to use Bracket Notation.
+
+//  6: Arrays
+
+// What is Array? Array is data structure to store/represent list of items
+// In JS, Arary is dynamic, its size/length/value/ data Type can be modify at any type
+// Big Difference? In JS, we can save different type of elements in an Array, rather then the same
+// type of elements like in other progmaing languages
+// Note: Technically array is an object
+
+let selected_color = ["red", "green"];
+selected_color[2] = "blue"; // In JS Array is dyamic
+selected_color[3] = 8;
+console.log(selected_color);
+console.log(typeof selected_color); // its show type = object, so Array is object
