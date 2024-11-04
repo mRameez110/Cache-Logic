@@ -33,11 +33,23 @@
 // List of Primitives:
 // String, Numbers, Boolean, Null, undefined
 
-let name = "Rameez"; // String Literal
-console.log(typeof name);
-let age = 23; // Number Literal
-let genderMale = ture; // Boolean Literal
-let lastName = undefined;
-console.log(typeof lastName);
-let result = null; // explicity set a variable with no value
-console.log(typeof result); //  its type is 'object'
+// let name = "Rameez"; // String Literal
+// console.log(typeof name);
+// let age = 23; // Number Literal
+// let genderMale = ture; // Boolean Literal
+// let lastName = undefined;
+// console.log(typeof lastName);
+// let result = null; // explicity set a variable with no value
+// console.log(typeof result); //  its type is 'object'
+
+//  Dynamic Typing(Type of variable change at run time)
+// This is the feature that different JS language form another languages
+let name4 = "Rameez";
+console.log(typeof name4);
+name4 = 5;
+console.log(typeof name4);
+
+//  in Js all number is type of number,  not float, double etc
+let num1 = 5;
+let num2 = 5.3; // both have same type number
+console.log(typeof (num1, num2));
