@@ -20,7 +20,14 @@
 
 // The concat() method concatenates (joins) two or more arrays.
 // The concat() method returns a new array, containing the joined arrays.
-let arr1 = [1, 2, 3];
-let arr2 = [4, 5];
-let concatinationTest = arr1.concat(arr2); // Make 1 combined array
-console.log(concatinationTest);
+// let arr1 = [1, 2, 3];
+// let arr2 = [4, 5];
+// let concatinationTest = arr1.concat(arr2); // Make 1 combined array
+// console.log(concatinationTest);
+
+// Filter
+// The filter() method creates a new array filled with elements that pass a test provided by a function.
+
+let marks = [40, 50, 60, 70];
+let filterTest = marks.filter((m) => m >= 50);
+console.log(filterTest);
