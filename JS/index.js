@@ -26,6 +26,15 @@
 // substring() is similar to slice().
 // The difference is that start and end values less than 0 are treated as 0 in substring().
 
+// let myName = "Rameez";
+// let subStringTest = myName.substring(-5, 4);
+// console.log("Sub String is", subStringTest);
+
+// 3 - substr()
+
+// substr() is similar to slice().
+// The difference is that the second parameter specifies the length of the extracted part.
+
 let myName = "Rameez";
-let subStringTest = myName.substring(-5, 4);
-console.log("Sub String is", subStringTest);
+let subStrTest = myName.substr(2, 3);
+console.log("Sub Str is", subStrTest);
