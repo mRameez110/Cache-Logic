@@ -41,6 +41,11 @@
 // });
 // console.log(marks);
 
-let marks = [40, 50, 60, 70];
-let includesTest = marks.includes(50); // Return true if find
-console.log(includesTest);
+// let marks = [40, 50, 60, 70];
+// let includesTest = marks.includes(50); // Return true if find
+// console.log(includesTest);
+
+// isArray() -> To check something is of type array or not
+
+let isArrayTest = Array.isArray(marks);
+console.log(isArrayTest);
