@@ -28,6 +28,9 @@
 // Filter
 // The filter() method creates a new array filled with elements that pass a test provided by a function.
 
-let marks = [40, 50, 60, 70];
-let filterTest = marks.filter((m) => m >= 50);
-console.log(filterTest);
+// let marks = [40, 50, 60, 70];
+// let filterTest = marks.filter((m) => m >= 50);
+// console.log(filterTest);
+
+let findTest = marks.find((m) => m > 50); // return 1st elemnt who matched
+console.log(findTest);
