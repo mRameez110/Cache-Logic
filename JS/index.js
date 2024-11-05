@@ -32,5 +32,11 @@
 // let filterTest = marks.filter((m) => m >= 50);
 // console.log(filterTest);
 
-let findTest = marks.find((m) => m > 50); // return 1st elemnt who matched
-console.log(findTest);
+// let findTest = marks.find((m) => m > 50); // return 1st elemnt who matched
+// console.log(findTest);
+
+// Iterate each element
+let forEachPractice = marks.forEach((m, index, Arr) => {
+  Arr[index] = m + 5; // It will modify the original array
+});
+console.log(marks);
