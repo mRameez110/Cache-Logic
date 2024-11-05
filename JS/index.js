@@ -41,6 +41,12 @@
 
 // Replace()
 
-let myName = "Rameez";
-let replaceTest = myName.replace("m", "g");
-console.log(replaceTest);
+// let myName = "Rameez";
+// let replaceTest = myName.replace("m", "g");
+// console.log(replaceTest);
+
+// trim()
+// The trim() method removes whitespace from both sides of a string:
+
+let myName = "  M Rameez ";
+let trimTest = myName.trim(); // Will Remove space from left and right
