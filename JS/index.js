@@ -36,7 +36,11 @@
 // console.log(findTest);
 
 // Iterate each element
-let forEachPractice = marks.forEach((m, index, Arr) => {
-  Arr[index] = m + 5; // It will modify the original array
-});
-console.log(marks);
+// let forEachPractice = marks.forEach((m, index, Arr) => {
+//   Arr[index] = m + 5; // It will modify the original array
+// });
+// console.log(marks);
+
+let marks = [40, 50, 60, 70];
+let includesTest = marks.includes(50); // Return true if find
+console.log(includesTest);
