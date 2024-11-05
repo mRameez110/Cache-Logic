@@ -47,5 +47,13 @@
 
 // isArray() -> To check something is of type array or not
 
-let isArrayTest = Array.isArray(marks);
-console.log(isArrayTest);
+// let isArrayTest = Array.isArray(marks);
+// console.log(isArrayTest);
+
+// splice()
+// To add, remove elements in/from array
+
+let marks = [40, 50, 60, 70];
+let spliceTest = marks.splice(2, 1, 90); // return removed elements Array
+console.log(spliceTest);
+console.log(marks);
