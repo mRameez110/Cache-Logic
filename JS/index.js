@@ -35,6 +35,12 @@
 // substr() is similar to slice().
 // The difference is that the second parameter specifies the length of the extracted part.
 
+// let myName = "Rameez";
+// let subStrTest = myName.substr(2, 3);
+// console.log("Sub Str is", subStrTest);
+
+// Replace()
+
 let myName = "Rameez";
-let subStrTest = myName.substr(2, 3);
-console.log("Sub Str is", subStrTest);
+let replaceTest = myName.replace("m", "g");
+console.log(replaceTest);
