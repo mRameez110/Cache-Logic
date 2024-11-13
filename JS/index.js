@@ -11,5 +11,12 @@
 
 // iii)  Undefined
 
-let age;
-console.log(age); // age is not defined, it default value will be undefined
+// let age;
+// console.log(age); // age is not defined, it default value will be undefined
+
+// iv)  NaN(not a Number)
+
+let nanTest = 5;
+nanTest = 5 * "Hello"; // Canot perform mulipply operation with 1 number and 1 string
+console.log(nanTest); // Output: Nan
+console.log(typeof nanTest); // Output: Number -> Bcz nan is itself a number
