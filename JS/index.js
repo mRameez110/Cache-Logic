@@ -12,16 +12,23 @@
 
 // Explicit
 
-let score = "100";
-// Score type is string but we want as number
-console.log(typeof score);
+// let score = "100";
+// // Score type is string but we want as number
+// console.log(typeof score);
 
-// Do type Conversion
+// // Do type Conversion
 
-score = Number(score); // Convert string score into number score
-console.log(typeof score);
+// score = Number(score); // Convert string score into number score
+// console.log(typeof score);
 
-let hel = "hello";
-console.log(typeof hel); // type of hel is string
-hel = Number(hel); //  As we converting Non Number String into number it will return Nan
-console.log(hel);
+// let hel = "hello";
+// console.log(typeof hel); // type of hel is string
+// hel = Number(hel); //  As we converting Non Number String into number it will return Nan
+// console.log(hel);
+
+// -> Number to String
+let num = 50;
+console.log(typeof num); // Its type is Number
+
+num = String(num);
+console.log(typeof num); // Now it will be string
