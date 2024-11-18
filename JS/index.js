@@ -23,12 +23,25 @@
 
 //      Arrow Functions
 
-const arrowFunctionTest = (name) => {
-  console.log("Hello from arrow function Test");
+// const arrowFunctionTest = (name) => {
+//   console.log("Hello from arrow function Test");
+// };
+
+// const arrowFunctionTest2 = (name) =>
+//   // If have just single statement, dont need braces and return
+//   console.log("Hello from arrow function Test 2");
+
+// arrowFunctionTest();
+
+// callback function
+
+let fruits = ["Apple", "Banana", "Mango"];
+
+// Function as a callback function
+
+const logFruits = (fruit, index) => {
+  // This is (logFruits) is a callback function
+  console.log(`${index} - ${fruit}`);
 };
 
-const arrowFunctionTest2 = (name) =>
-  // If have just single statement, dont need braces and return
-  console.log("Hello from arrow function Test 2");
-
-arrowFunctionTest();
+fruits.forEach(logFruits); // Taking function as Param
