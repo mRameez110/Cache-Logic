@@ -15,8 +15,20 @@
 // };
 
 // //  Functions expression
-const functionParameterTest = function greet3(name = "Sheikh") {
-  console.log("Hello " + name);
+// const functionParameterTest = function greet3(name = "Sheikh") {
+//   console.log("Hello " + name);
+// };
+
+// functionParameterTest("MR"); // If I pass Argument it will override the param default value that is 'Sheikh'
+
+//      Arrow Functions
+
+const arrowFunctionTest = (name) => {
+  console.log("Hello from arrow function Test");
 };
 
-functionParameterTest("MR"); // If I pass Argument it will override the param default value that is 'Sheikh'
+const arrowFunctionTest2 = (name) =>
+  // If have just single statement, dont need braces and return
+  console.log("Hello from arrow function Test 2");
+
+arrowFunctionTest();
