@@ -29,9 +29,16 @@
 
 // Example:
 
-function Person(name) {
-  this.name = name;
-}
+// function Person(name) {
+//   this.name = name;
+// }
 
-const rameez = new Person("Rameez");
-console.log(rameez.name); // "Rameez"
+// const rameez = new Person("Rameez");
+// console.log(rameez.name); // "Rameez"
+
+let numOne = 20;
+let numTwo = numOne;
+numOne = 10;
+console.log(numOne); // output: 10
+console.log(numTwo); // output: 20;
+// Both are seprates/ independents copies
