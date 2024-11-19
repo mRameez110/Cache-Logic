@@ -36,9 +36,23 @@
 // const rameez = new Person("Rameez");
 // console.log(rameez.name); // "Rameez"
 
-let numOne = 20;
-let numTwo = numOne;
-numOne = 10;
-console.log(numOne); // output: 10
-console.log(numTwo); // output: 20;
-// Both are seprates/ independents copies
+// 1 - Primitive
+
+// let numOne = 20;
+// let numTwo = numOne;
+// numOne = 10;
+// console.log(numOne); // output: 10
+// console.log(numTwo); // output: 20;
+// // Both are seprates/ independents copies
+
+// 2- Reference:
+
+let obj1 = {
+  name: "M",
+  age: 23,
+};
+
+obj2 = obj1;
+obj1.age = 60;
+console.log(obj1);
+console.log(obj2); // obj2 will also change as both objects pointing to same memory(Heap) reference
