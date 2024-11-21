@@ -26,10 +26,20 @@
 // A complete independt copy of reference data type
 // change in one not effect other one
 
-let arr2 = [1, 2, 3];
-let deepCopy = [...arr2];
+// let arr2 = [1, 2, 3];
+// let deepCopy = [...arr2];
 
-deepCopy.push(99); // change in copied array(deepCopy) will not effect original(arr2) Array
+// deepCopy.push(99); // change in copied array(deepCopy) will not effect original(arr2) Array
 
-console.log(arr2);
-console.log(deepCopy);
+// console.log(arr2);
+// console.log(deepCopy);
+
+// Note:
+// If data is nested then spread operator only copy root level(top-1) as copy by value and nested data as copy by reference
+// in case of nested data spread operator(...) will behave as shallowCopy
+
+const first_person = {
+  name: "Jack",
+  age: 24,
+  lt: {},
+};
