@@ -24,17 +24,60 @@
 
 // simple promise
 
-function p1() {
+// function p1() {
+//   return new Promise((resolve, reject) => {
+//     // "Producing Code" (May take some time)
+//     setTimeout(() => {
+//       console.log("function p1");
+//       resolve("Promise returned sucessfully");
+//     }, 2000);
+//   });
+// }
+
+// // "Consuming Code" (Must wait for a fulfilled Promise)
+// p1()
+//   .then((value) => console.log("value returned by p1 is ", value))
+//   .catch((err) => console.log("eror getting", err));
+
+// Nested Promise(Promise inside promise)
+
+function data1() {
   return new Promise((resolve, reject) => {
-    // "Producing Code" (May take some time)
     setTimeout(() => {
-      console.log("function p1");
-      resolve("Promise returned sucessfully");
-    }, 2000);
+      console.log("Getting data of function 1.....");
+      resolve("data1 successed");
+    }, 1000);
   });
 }
 
-// "Consuming Code" (Must wait for a fulfilled Promise)
-p1()
-  .then((value) => console.log("value returned by p1 is ", value))
-  .catch((err) => console.log("eror getting", err));
+function data2() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Getting data of function 2.....");
+      resolve("data 2 successed");
+    }, 1000);
+  });
+}
+
+function data3() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Getting data of function 3.....");
+      resolve("data 3 successed");
+    }, 1000);
+  });
+}
+
+const f1 = data1();
+
+f1.then((resolve) => {
+  console.log(resolve);
+  const f2 = data2();
+  f2.then((resolve) => {
+    console.log(resolve);
+    const f3 = data3();
+    f3.then((resolve) => {
+      console.log(resolve);
+    });
+  });
+});
