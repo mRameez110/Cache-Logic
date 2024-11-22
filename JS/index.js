@@ -110,7 +110,23 @@
 //  ..... promise Resolve all
 //  Promise.all will reject as soon as one of the Promises in the array reject.
 
-const pr1 = Promise.resolve("Prom1 Resolved");
+// const pr1 = Promise.resolve("Prom1 Resolved");
+// const pr2 = 5;
+// const pr3 = new Promise((resolve, reject) =>
+//   setTimeout(resolve, 3000, "Good time done")
+// );
+
+// const allPromises = [pr1, pr2, pr3];
+
+// Promise.all(allPromises)
+//   .then((value) => console.log(value))
+//   .catch((err) => console.log("Geted error is ", err));
+
+//  .... promise resolve all.settled
+
+// Promise.allSettled will never reject, it will resolve once all Promises in the array have either rejected or resolved.
+
+const pr1 = Promise.reject("Prom1 Resolved");
 const pr2 = 5;
 const pr3 = new Promise((resolve, reject) =>
   setTimeout(resolve, 3000, "Good time done")
@@ -118,6 +134,10 @@ const pr3 = new Promise((resolve, reject) =>
 
 const allPromises = [pr1, pr2, pr3];
 
-Promise.all(allPromises)
-  .then((value) => console.log(value))
-  .catch((err) => console.log("Geted error is ", err));
+// Promise.allSettled(allPromises).then((values) => console.log(values));
+
+Promise.allSettled(allPromises).then((results) =>
+  results.forEach((result) =>
+    console.log(result.status, result.value || result.reason)
+  )
+);
