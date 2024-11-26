@@ -126,18 +126,41 @@
 
 // Promise.allSettled will never reject, it will resolve once all Promises in the array have either rejected or resolved.
 
-const pr1 = Promise.reject("Prom1 Resolved");
-const pr2 = 5;
-const pr3 = new Promise((resolve, reject) =>
-  setTimeout(resolve, 3000, "Good time done")
-);
+// const pr1 = Promise.reject("Prom1 Resolved");
+// const pr2 = 5;
+// const pr3 = new Promise((resolve, reject) =>
+//   setTimeout(resolve, 3000, "Good time done")
+// );
 
-const allPromises = [pr1, pr2, pr3];
+// const allPromises = [pr1, pr2, pr3];
 
-// Promise.allSettled(allPromises).then((values) => console.log(values));
+// // Promise.allSettled(allPromises).then((values) => console.log(values));
 
-Promise.allSettled(allPromises).then((results) =>
-  results.forEach((result) =>
-    console.log(result.status, result.value || result.reason)
-  )
-);
+// Promise.allSettled(allPromises).then((results) =>
+//   results.forEach((result) =>
+//     console.log(result.status, result.value || result.reason)
+//   )
+// );
+
+// 3 -  ........  Async Await
+
+function calculate() {
+  let sum;
+  for (let i = 1; i <= 999999999; i++) {
+    i = i + 1;
+    i = i - 1;
+    i = i + 2;
+    sum = i;
+  }
+  return sum;
+}
+
+async function asyncAwaitTest() {
+  console.log(1);
+
+  let data = await calculate(); // calculate is heave/slow function
+  console.log(data);
+  console.log("What you waiting");
+}
+
+asyncAwaitTest();
