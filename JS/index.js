@@ -144,23 +144,44 @@
 
 // 3 -  ........  Async Await
 
-function calculate() {
-  let sum;
-  for (let i = 1; i <= 999999999; i++) {
-    i = i + 1;
-    i = i - 1;
-    i = i + 2;
-    sum = i;
-  }
-  return sum;
-}
+// function calculate() {
+//   let sum;
+//   for (let i = 1; i <= 999999999; i++) {
+//     i = i + 1;
+//     i = i - 1;
+//     i = i + 2;
+//     sum = i;
+//   }
+//   return sum;
+// }
 
-async function asyncAwaitTest() {
+// async function asyncAwaitTest() {
+//   console.log(1);
+
+//   let data = await calculate(); // calculate is heave/slow function
+//   console.log(data);
+//   console.log("What you waiting");
+// }
+
+// asyncAwaitTest();
+
+// --- Promise Test ---
+
+function promiseTest() {
+  let gettedSum;
   console.log(1);
-
-  let data = await calculate(); // calculate is heave/slow function
-  console.log(data);
-  console.log("What you waiting");
+  return new Promise((resolve, reject) => {
+    console.log(2);
+    gettedSum = calculate();
+    console.log(3);
+    resolve("Promise resolved");
+  });
 }
+let c2 = promiseTest();
 
-asyncAwaitTest();
+c2.then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.log(err);
+});
+console.log(56);
