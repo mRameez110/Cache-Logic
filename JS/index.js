@@ -16,3 +16,5 @@
 // userFind(3);
 
 // console.log("This will not run."); // This will not run because the application crashed
+
+// same like above function but application will not crash as handled by error exception
