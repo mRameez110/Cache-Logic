@@ -18,3 +18,19 @@
 // console.log("This will not run."); // This will not run because the application crashed
 
 // same like above function but application will not crash as handled by error exception
+
+function userFind2(id) {
+  const users = { 1: "m", 2: "rameez" };
+
+  try {
+    let user = users[id];
+    if (!user) throw new Error("User not exist");
+    let userInUpperCase = user.toUpperCase();
+    console.log(userInUpperCase);
+  } catch (err) {
+    console.error(err.name);
+    console.error(err.message);
+  }
+}
+
+userFind2(5);
