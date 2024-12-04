@@ -10,10 +10,11 @@ class Car {
     this.year = year;
     console.log(this.name);
 
-    setTimeout(() => {
-      console.log(this.year);
-    }, 2000);
+    // setTimeout(() => {
+    //   console.log(this.year);
+    // }, 2000);
   }
 }
 
-const myCar1 = new Car("wagonR", 2015);
+// const myCar1 = new Car("wagonR", 2015);
+const myCar2 = new Car("Corola", 2014);
