@@ -8,7 +8,11 @@ class Car {
   constructor(name, year) {
     this.name = name;
     this.year = year;
-    console.log(this.name, this.year);
+    console.log(this.name);
+
+    setTimeout(() => {
+      console.log(this.year);
+    }, 2000);
   }
 }
 
