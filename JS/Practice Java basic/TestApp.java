@@ -1,15 +1,16 @@
 // Static Method Demo
   
-public class TestApp {
+// public class TestApp {
 
-    public static void main(String args[]) {
+//     public static void main(String args[]) {
         
         
-        System.out.println(Student.age); // Acees Static Instance without creating 
+//         System.out.println(Student.age); // Acees Static Instance without creating 
         
-        Student.staticTest();  // Acessing static Method
+//         Student.staticTest();  // Acessing static Method
 
-    }
+//     }
     
-}
+// }
+
 
