@@ -29,3 +29,21 @@
 //     }
     
 // }
+
+
+
+//       Inheritance Demo (Classes created for this demo are Vehicle & Car)    
+
+
+public class TestApp {
+
+    public static void main(String args[]) {
+        
+        Car myCar1 = new Car();
+
+       myCar1.vehicleSound();
+
+    }
+    
+}
+
