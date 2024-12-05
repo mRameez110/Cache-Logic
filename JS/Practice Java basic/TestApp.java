@@ -19,13 +19,13 @@
 
 //     // An abstract class in Java is a class that cannot be instantiated on its own and is meant to be inherited by other classes. It can have both abstract methods (methods without a body) and concrete methods (methods with a body).
 
-public class TestApp {
+// public class TestApp {
 
-    public static void main(String args[]) {
+//     public static void main(String args[]) {
         
-        Animal dog = new Dog();
-        dog.sound();  // Calling abstract method from abstract class
+//         Animal dog = new Dog();
+//         dog.sound();  // Calling abstract method from abstract class
 
-    }
+//     }
     
-}
+// }
