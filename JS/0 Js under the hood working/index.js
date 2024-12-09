@@ -33,3 +33,9 @@ hoistingTest();
 function hoistingTest() {
   console.log("Hositing testing");
 }
+
+// functionExpressionHositingTest();  // this will give error
+
+// const functionExpressionHositingTest = function test() {
+//   console.log("Function Expression Hoisting test");
+// };
