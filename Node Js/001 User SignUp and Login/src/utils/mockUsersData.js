@@ -20,4 +20,8 @@ const addNewUser = (id, username, email, password) => {
   return newUser;
 };
 
-module.exports = { addNewUser };
+const findUserAgainstEmail = (email) => {
+  return users.find((user) => user.email === email);
+};
+
+module.exports = { addNewUser, findUserAgainstEmail };
