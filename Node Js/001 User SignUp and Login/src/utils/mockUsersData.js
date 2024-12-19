@@ -12,3 +12,12 @@ const users = [
     password: "",
   },
 ];
+
+const addNewUser = (id, username, email, password) => {
+  const newUser = { id, username, email, password };
+  users.push(newUser);
+  console.log("Print new user data in mock data file", newUser);
+  return newUser;
+};
+
+module.exports = { addNewUser };
