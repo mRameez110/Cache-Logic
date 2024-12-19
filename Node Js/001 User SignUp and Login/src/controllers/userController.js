@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const signUp = async (req, res) => {
   const { id, username, email, password } = req.body;
 
@@ -21,5 +22,25 @@ const signUp = async (req, res) => {
   res.status(200).send({
     Request: "Sucessful",
     New_User: resultWithoutPassword,
+  });
+};
+
+const sigIn = async (req, res) => {
+  const { email, password } = req.body;
+  console.log("Check body in user controller Login ", email, password);
+
+  const sendUser = findUserAgainstEmail(email);
+  const { password: _, ...sendUserWithoutPassword } = sendUser;
+
+  const token = jwt.sign({ email: email }, process.env.secret);
+
+  console.log(
+    "See token value in Login function under user controller ",
+    token
+  );
+  res.send({
+    Status: "User Loged Successfully",
+    User_Data: sendUserWithoutPassword,
+    Token: token,
   });
 };
