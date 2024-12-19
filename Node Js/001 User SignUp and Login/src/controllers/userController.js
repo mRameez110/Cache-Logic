@@ -44,3 +44,5 @@ const sigIn = async (req, res) => {
     Token: token,
   });
 };
+
+module.exports = { signUp, sigIn };
