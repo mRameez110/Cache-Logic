@@ -26,4 +26,11 @@ const login = async (req, res, next) => {
   const findUser = findUserAgainstEmail(email);
   console.log("check what is find user on login middleware ", findUser);
   if (!findUser) return next(new BadRequestError("Email does't exist"));
+
+  const passwordCheck = bcrypt.compareSync(
+    password.toString(),
+    findUser.password
+  );
+  if (!passwordCheck) return next(new BadRequestError("Password does't match"));
+  next();
 };
