@@ -34,3 +34,5 @@ const login = async (req, res, next) => {
   if (!passwordCheck) return next(new BadRequestError("Password does't match"));
   next();
 };
+
+module.exports = { register, login };
