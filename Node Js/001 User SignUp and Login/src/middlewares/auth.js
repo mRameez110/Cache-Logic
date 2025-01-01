@@ -9,5 +9,9 @@ const register = async (req, res, next) => {
   if (!id || !username || !email || !password)
     return next(new BadRequestError("Please fills all the fields"));
 
+  if (findUserAgainstEmail(email)) {
+    return next(new BadRequestError("User already exists", 409));
+  }
+
   next();
 };
