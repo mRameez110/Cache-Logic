@@ -15,3 +15,8 @@ const register = async (req, res, next) => {
 
   next();
 };
+
+const login = async (req, res, next) => {
+  const { email, password } = req.body;
+  console.log("body of login", email, password);
+};
