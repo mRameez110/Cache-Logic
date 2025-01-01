@@ -22,4 +22,8 @@ const login = async (req, res, next) => {
 
   if (!email || !password)
     return next(new BadRequestError("Please fill all fields", 400));
+
+  const findUser = findUserAgainstEmail(email);
+  console.log("check what is find user on login middleware ", findUser);
+  if (!findUser) return next(new BadRequestError("Email does't exist"));
 };
