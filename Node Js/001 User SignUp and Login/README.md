@@ -13,3 +13,4 @@ i) Sign in by providing credential(email and password)
 ii)1st login auth will check request body, to pass the request to SignIn controler
 iii) If request status is 200, check the user from dummy Database against providing email
 iv) if user not found, show relevent message to user
+v)bcrypt and compare password if user exist
