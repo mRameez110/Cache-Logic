@@ -10,3 +10,4 @@ iv) If all conditions met, application will bypass to register controller
 
 SignIn:
 i) Sign in by providing credential(email and password)
+ii)1st login auth will check request body, to pass the request to SignIn controler
