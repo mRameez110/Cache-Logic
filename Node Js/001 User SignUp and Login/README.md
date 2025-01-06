@@ -16,3 +16,5 @@ iv) if user not found, show relevent message to user
 v)bcrypt and compare password if user exist
 vi)If password not match, send proper message, otherwise transfer control to controller middleware
 vii) sign token and send response
+
+..... -> Nice you got the working flow
