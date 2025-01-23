@@ -17,3 +17,17 @@ const signUp = async (req, res) => {
       New_User: resultWithoutPassword,
     });
   };
+
+
+  const sigIn = async (req, res) => {
+    const result = await userSigninServ(req.body);
+    if (!result)
+      throw new BadRequestError("Something wrong in register new user", 400);
+  
+    res.status(200).send({
+      Status: "User Loged Successfully",
+      User_Data: result.user,
+      Token: result.token,
+    });
+  };
+
