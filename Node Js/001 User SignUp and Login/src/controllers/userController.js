@@ -1,5 +1,8 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { addNewUser, findUserAgainstEmail } = require("../utils/mockUsersData");
+const { BadRequestError } = require("../customErrors/customErrorClass");
+
 const signUp = async (req, res) => {
   const { id, username, email, password } = req.body;
 
@@ -12,7 +15,7 @@ const signUp = async (req, res) => {
 
   const result = addNewUser(id, username, email, hashedPassword);
   console.log(
-    "Print data getted from  mock user data by add new user function",
+    "Print data get from  mock user data by add new user function",
     result
   );
   if (!result)
@@ -20,7 +23,7 @@ const signUp = async (req, res) => {
   const { password: _, ...resultWithoutPassword } = result;
 
   res.status(200).send({
-    Request: "Sucessful",
+    Request: "Successful",
     New_User: resultWithoutPassword,
   });
 };
@@ -44,5 +47,4 @@ const sigIn = async (req, res) => {
     Token: token,
   });
 };
-
 module.exports = { signUp, sigIn };
