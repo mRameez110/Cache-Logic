@@ -34,3 +34,6 @@ const register = async (req, res, next) => {
     next();
   };
 
+
+  module.exports = { register, login };
+
