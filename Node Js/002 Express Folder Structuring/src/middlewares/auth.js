@@ -15,3 +15,22 @@ const register = async (req, res, next) => {
     next();
   };
 
+
+  const login = async (req, res, next) => {
+    const { email, password } = req.body;
+    console.log("body of login", email, password);
+    if (!email || !password)
+      return next(new BadRequestError("Please fill all fields", 400));
+  
+    const findUser = findUserAgainstEmail(email);
+    console.log("check what is find user on login midleware ", findUser);
+    if (!findUser) return next(new BadRequestError("Email does't exist"));
+  
+    const passwordCheck = bcrypt.compareSync(
+      password.toString(),
+      findUser.password
+    );
+    if (!passwordCheck) return next(new BadRequestError("Password does't match"));
+    next();
+  };
+
