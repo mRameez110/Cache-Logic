@@ -14,3 +14,12 @@ class AppError extends Error {
       super(errorMessage, statusCode);
     }
   }
+
+  class BadRequestError extends AppError {
+    constructor(message = "Bad Request", errorCode = 400) {
+      console.log("Hello Bad request is..");
+      const errorMessage = message;
+      const statusCode = errorCode;
+      super(errorMessage, statusCode);
+    }
+  }
