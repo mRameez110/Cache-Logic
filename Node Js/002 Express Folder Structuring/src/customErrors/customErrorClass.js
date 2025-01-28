@@ -23,3 +23,6 @@ class AppError extends Error {
       super(errorMessage, statusCode);
     }
   }
+
+
+  module.exports = { RouteNotFoundError, BadRequestError };
