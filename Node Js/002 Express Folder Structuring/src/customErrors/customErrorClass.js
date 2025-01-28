@@ -7,3 +7,10 @@ class AppError extends Error {
   }
   
 
+  class RouteNotFoundError extends AppError {
+    constructor(message = "Route does't exist", errorCode = 404) {
+      const errorMessage = message;
+      const statusCode = errorCode;
+      super(errorMessage, statusCode);
+    }
+  }
