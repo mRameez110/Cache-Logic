@@ -3,8 +3,11 @@ const express = require("express");
 const { default: helmet } = require("helmet");
 const cors = require("cors");
 const compression = require("compression");
-
 const connectDB = require("./utils/helpers/db");
+
+const userRoute = require("./api/routes/authRoutes");
+const errorHandler = require("./utils/middlewares/errorHandler");
+const { RouteNotFoundError } = require("./utils/constants/errors/index");
 
 const app = express();
 
