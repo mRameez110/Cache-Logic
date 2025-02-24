@@ -23,4 +23,27 @@ const signUp = async (req, res, next) => {
 	}
 };
 
-module.exports = { signUp };
+const signIn = async (req, res, next) => {
+	try {
+		const { error } = signInSchema.validate(req.body);
+		if (error) throw new BadRequestError(error.details[0].message);
+
+		const result = await login(req.body);
+
+		console.log("check what we get as result ", result);
+
+		res.status(200).send({
+			status: true,
+			message: "Logged in successfully",
+
+			data: {
+				user: result.user,
+				token: result.token,
+			},
+		});
+	} catch (err) {
+		next(err);
+	}
+};
+
+module.exports = { signUp, signIn };
