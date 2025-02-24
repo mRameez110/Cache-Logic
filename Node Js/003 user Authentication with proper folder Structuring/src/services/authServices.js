@@ -26,4 +26,19 @@ const register = async (dataObject) => {
 	return user;
 };
 
-module.exports = { register };
+const login = async (body) => {
+	const { email, password } = body;
+	console.log("Check body in user controller Login ", email, password);
+
+	const loginUser = await UserModel.findOne({ email: email });
+	if (!loginUser) throw new BadRequestError("User does't exist ", 409);
+
+	const passwordCheck = bcrypt.compareSync(password, loginUser.password);
+	if (!passwordCheck) throw new BadRequestError("Password does't match", 400);
+
+	const token = jwt.sign({ email: email }, process.env.secret);
+
+	return { user: loginUser, token };
+};
+
+module.exports = { register, login };
