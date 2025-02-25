@@ -12,7 +12,15 @@ class RouteNotFoundError extends AppError {
 	}
 }
 
+class AccountAlreadyExistsError extends AppError {
+	constructor(message = "", statusCode = 404) {
+		this.name = "AccountAlreadyExistsError";
+		super(message, statusCode);
+	}
+}
+
 module.exports = {
 	AppError,
-  RouteNotFoundError
+	RouteNotFoundError,
+	AccountAlreadyExistsError,
 };
