@@ -6,6 +6,13 @@ class AppError extends Error {
 	}
 }
 
+class RouteNotFoundError extends AppError {
+	constructor(message = "Route does't exist", statusCode = 404) {
+		super(message, statusCode);
+	}
+}
+
 module.exports = {
 	AppError,
+  RouteNotFoundError
 };
