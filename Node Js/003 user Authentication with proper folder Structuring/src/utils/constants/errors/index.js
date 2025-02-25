@@ -19,8 +19,15 @@ class AccountAlreadyExistsError extends AppError {
 	}
 }
 
+class BadRequestError extends AppError {
+	constructor(message = "Bad Request", statusCode = 400) {
+		super(message, statusCode);
+	}
+}
+
 module.exports = {
 	AppError,
 	RouteNotFoundError,
 	AccountAlreadyExistsError,
+	BadRequestError,
 };
