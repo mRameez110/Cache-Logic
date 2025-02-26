@@ -29,4 +29,4 @@ app.all("*", (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(PORT, () => console.log("Server started on PORT ", PORT));
+app.listen(PORT, () => console.log("Server started on  PORT ", PORT));
