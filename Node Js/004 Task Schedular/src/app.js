@@ -4,6 +4,10 @@ const { default: helmet } = require("helmet");
 const cors = require("cors");
 const compression = require("compression");
 
+const userRoute = require("./api/routes/userRoute");
+const taskRoute = require("./api/routes/taskRoute");
+const errorHandler = require("./middlewares/errorHandler");
+
 const app = express();
 
 connectDB();
