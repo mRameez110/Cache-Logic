@@ -7,7 +7,8 @@ const compression = require("compression");
 const userRoute = require("./api/routes/userRoute");
 const taskRoute = require("./api/routes/taskRoute");
 const errorHandler = require("./middlewares/errorHandler");
-
+const { RouteNotFoundError } = require("./utils/constants/errors/errorClass");
+const connectDB = require("./utils/constants/db/connection");
 const app = express();
 
 connectDB();
@@ -24,7 +25,7 @@ app.use("/api/users", userRoute);
 app.use("/api/tasks", taskRoute);
 
 app.all("*", (req, res) => {
-  throw new RouteNotFoundError();
+	throw new RouteNotFoundError();
 });
 
 app.use(errorHandler);
