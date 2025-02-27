@@ -16,10 +16,10 @@ app.use(express.urlencoded({ extended: false }));
 
 const PORT = process.env.PORT || 3001;
 
-
 app.all("*", (req, res) => {
-  throw new RouteNotFoundError();
+	throw new RouteNotFoundError();
 });
 
+app.use(errorHandler);
 
 app.listen(PORT, () => console.log("Server started on PORT ", PORT));
