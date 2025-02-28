@@ -1,4 +1,7 @@
 const userModel = require("..//models/userModel");
+const {
+	UserAlreadyExistError,
+} = require("../utils/constants/errors/errorClass");
 
 const registerService = async (dataObject) => {
 	const { username, email, password } = dataObject;
@@ -6,13 +9,13 @@ const registerService = async (dataObject) => {
 	const userNameAlreadyExist = await userModel.findOne({ username });
 
 	if (userNameAlreadyExist) {
-		throw new Error("Username already in use", 400);
+		throw new UserAlreadyExistError("Username already in use", 400);
 	}
 
 	const userEmailAlreadyExist = await userModel.findOne({ email });
 
 	if (userEmailAlreadyExist) {
-		throw new Error("Email already in use", 400);
+		throw new UserAlreadyExistError("Email already in use", 400);
 	}
 
 	const registerNewUser = new userModel({
