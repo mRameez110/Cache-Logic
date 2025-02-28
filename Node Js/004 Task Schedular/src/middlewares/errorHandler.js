@@ -5,7 +5,7 @@ const errorHandler = (err, req, res, next) => {
   const errorCode = err.errorCode ;
 
   res.status(errorCode).json({
-    status: "",
+    status: false,
     message: errorMessage,
     data: null,
   });
