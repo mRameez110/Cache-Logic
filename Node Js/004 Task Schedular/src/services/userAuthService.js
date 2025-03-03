@@ -1,3 +1,4 @@
+
 const userModel = require("..//models/userModel");
 const {
 	UserAlreadyExistError,
@@ -25,6 +26,7 @@ const registerService = async (dataObject) => {
 
 	const user = await registerNewUser.save();
 	return user;
+
 };
 
 module.exports = { registerService };

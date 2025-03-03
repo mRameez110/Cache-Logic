@@ -1,5 +1,3 @@
-const { registerService } = require("../../services/userAuthService");
-const {
 	registerValidationSchema,
 	validation,
 } = require("../../utils/validations/validation");
@@ -16,7 +14,7 @@ const createUser = async (req, res, next) => {
 		});
 	} catch (err) {
 		next(err);
-	}
+	
 };
 
 module.exports = { createUser };

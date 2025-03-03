@@ -25,7 +25,8 @@ app.use("/api/users", userRoute);
 app.use("/api/tasks", taskRoute);
 
 app.all("*", (req, res) => {
-	throw new RouteNotFoundError();
+
+  throw new RouteNotFoundError();
 });
 
 app.use(errorHandler);
