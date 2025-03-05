@@ -13,4 +13,5 @@ const taskCreateValidationSchema = joi
 		createdBy: joi.string().min(2).max(10).trim().required(),
 		assignedTo: joi.string().min(2).max(10).trim().required(),
 	})
-	.options({ abortEarly: true });
+	.options({ abortEarly: true })
+	.unknown(false);
