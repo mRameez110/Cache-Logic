@@ -15,3 +15,10 @@ const taskCreateValidationSchema = joi
 	})
 	.options({ abortEarly: true })
 	.unknown(false);
+
+const validation = (dataObject, validationSchema) => {
+	const { error } = validationSchema.validate(dataObject);
+	if (error) {
+		throw new Error(error.details.message);
+	}
+};
