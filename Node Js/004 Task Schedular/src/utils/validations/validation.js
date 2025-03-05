@@ -6,8 +6,10 @@ const registerValidationSchema = joi
 	})
 	.options({ abortEarly: true });
 
-const taskCreateValidationSchema = joi.object({
-	title: joi.string().min(5).max(15),
-	description: joi.string().max(50),
-	createdBy: joi.string().min(2).max(10).required(),
-});
+const taskCreateValidationSchema = joi
+	.object({
+		title: joi.string().min(5).max(15),
+		description: joi.string().max(50),
+		createdBy: joi.string().min(2).max(10).required(),
+	})
+	.options({ abortEarly: true });
