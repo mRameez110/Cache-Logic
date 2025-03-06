@@ -3,6 +3,7 @@ const express = require("express");
 const { default: helmet } = require("helmet");
 const cors = require("cors");
 const compression = require("compression");
+const connectDB = require("./utils/helper/db/connection");
 const app = express();
 
 
