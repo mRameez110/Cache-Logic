@@ -30,3 +30,5 @@ app.listen(PORT, () => console.log("Server started on PORT ", PORT));
 app.all("*", (req, res) => {
   throw new Error("Route not found ");
 });
+
+app.use(errorHandler);
