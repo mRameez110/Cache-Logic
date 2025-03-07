@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 connectDB();
 
 app.use("/api/users", userRoute);
-
+app.use("/api/tasks", taskRoute);
 
 const PORT = process.env.PORT || 3001;
 
