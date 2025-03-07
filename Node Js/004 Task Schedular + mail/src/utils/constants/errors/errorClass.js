@@ -23,6 +23,11 @@ class BadRequestError extends AppError {
   }
 }
 
+class MailError extends AppError {
+  constructor(message = "Error in Mail generation/transfer", errorCode = 500) {
+    super(message, errorCode);
+  }
+}
 
 module.exports = {
   AppError,
