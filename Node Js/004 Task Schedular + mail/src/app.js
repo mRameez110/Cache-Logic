@@ -5,6 +5,7 @@ const cors = require("cors");
 const compression = require("compression");
 const connectDB = require("./utils/helper/db/connection");
 
+const errorHandler = require("./middlewares/errorHandler");
 const userRoute = require("./api/routes/userRoute");
 const taskRoute = require("./api/routes/taskRoute");
 
