@@ -4,6 +4,10 @@ const { default: helmet } = require("helmet");
 const cors = require("cors");
 const compression = require("compression");
 const connectDB = require("./utils/helper/db/connection");
+
+const userRoute = require("./api/routes/userRoute");
+const taskRoute = require("./api/routes/taskRoute");
+
 const app = express();
 
 app.use(helmet());
@@ -19,5 +23,5 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log("Server started on PORT ", PORT));
 
 app.all("*", (req, res) => {
-	throw new Error("Route not found ");
+  throw new Error("Route not found ");
 });
