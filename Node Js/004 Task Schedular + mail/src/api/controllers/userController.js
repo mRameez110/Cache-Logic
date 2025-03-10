@@ -35,3 +35,19 @@ const getAllUsers = async (req, res, next) => {
 		next(error);
 	}
 };
+
+
+const getUserByUserName = async (req, res, next) => {
+  try {
+    const user = await getUserService(req);
+
+    res.status(200).json({
+      status: true,
+      message: "user details are below",
+      data: user,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
