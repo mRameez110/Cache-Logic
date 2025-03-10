@@ -1,6 +1,6 @@
 const {
 	getAllUsersService,
-  getUserService,
+	getUserService,
 } = require("../../../../../../Cache Logics/Coding/Node Js/004 Task Schedular + mail/src/services/userAuthService");
 const { registerService } = require("../../services/userAuthService");
 const {
@@ -37,18 +37,18 @@ const getAllUsers = async (req, res, next) => {
 	}
 };
 
-
 const getUserByUserName = async (req, res, next) => {
-  try {
-    const user = await getUserService(req);
+	try {
+		const user = await getUserService(req);
 
-    res.status(200).json({
-      status: true,
-      message: "user details are below",
-      data: user,
-    });
-  } catch (error) {
-    next(error);
-  }
+		res.status(200).json({
+			status: true,
+			message: "user details are below",
+			data: user,
+		});
+	} catch (error) {
+		next(error);
+	}
 };
 
+module.exports = { createUser, getAllUsers, getUserByUserName };
