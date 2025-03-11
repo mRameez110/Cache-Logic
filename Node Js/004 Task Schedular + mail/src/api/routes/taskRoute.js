@@ -6,3 +6,7 @@ const router = express.Router();
 router.get("/allTasks", getAllTasks);
 
 router.post("/createTask", createTask);
+
+router.get("/task/:username", (req, res) => {
+	res.send("Task by username");
+});
