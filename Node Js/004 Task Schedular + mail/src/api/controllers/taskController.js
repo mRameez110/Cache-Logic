@@ -20,6 +20,14 @@ const createTask = async (req, res, next) => {
 		});
 		console.log("Task assigned to details ", assignedUser);
 		const receiverMail = assignedUser.email;
+		sendEmail(
+			receiverMail,
+			"Task Notification",
+			title,
+			description,
+			createdBy,
+			assignedTo
+		);
 	} catch (err) {
 		next(err);
 	}
