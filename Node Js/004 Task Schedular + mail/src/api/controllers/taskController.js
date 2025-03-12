@@ -2,6 +2,7 @@ const { createTaskService } = require("../../services/taskService");
 
 const createTask = async (req, res, next) => {
 	try {
+		validation(req.body, taskCreateValidationSchema);
 		const newTask = await createTaskService(req.body);
 
 		const { title, description, createdBy, assignedTo } = newTask;
@@ -19,8 +20,7 @@ const createTask = async (req, res, next) => {
 		});
 		console.log("Task assigned to details ", assignedUser);
 		const receiverMail = assignedUser.email;
-
-			} catch (err) {
+	} catch (err) {
 		next(err);
 	}
 };
