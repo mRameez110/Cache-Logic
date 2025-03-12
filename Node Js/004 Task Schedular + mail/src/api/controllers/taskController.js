@@ -1,4 +1,6 @@
-const { getAllTasksService } = require("../../../../../../Cache Logics/Coding/Node Js/004 Task Schedular + mail/src/services/taskService");
+const {
+	getAllTasksService,
+} = require("../../../../../../Cache Logics/Coding/Node Js/004 Task Schedular + mail/src/services/taskService");
 const { createTaskService } = require("../../services/taskService");
 
 const createTask = async (req, res, next) => {
@@ -46,17 +48,28 @@ const createTask = async (req, res, next) => {
 	}
 };
 
-
 const getAllTasks = async (req, res, next) => {
-  try {
-    const tasks = await getAllTasksService();
+	try {
+		const tasks = await getAllTasksService();
 
-    res.status(200).send({
-      status: true,
-      message: "All task List is below",
-      data: tasks,
-    });
-  } catch (error) {
-    next(error);
-  }
+		res.status(200).send({
+			status: true,
+			message: "All task List is below",
+			data: tasks,
+		});
+	} catch (error) {
+		next(error);
+	}
+};
+
+const getTaskByUsername = async (req, res, next) => {
+	try {
+		res.status(200).send({
+			status: true,
+			message: "Task details against user name is below",
+			data: task,
+		});
+	} catch (error) {
+		next(error);
+	}
 };
