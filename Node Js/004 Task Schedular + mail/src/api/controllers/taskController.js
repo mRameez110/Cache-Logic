@@ -64,6 +64,7 @@ const getAllTasks = async (req, res, next) => {
 
 const getTaskByUsername = async (req, res, next) => {
 	try {
+		const task = await getTaskService(req);
 		res.status(200).send({
 			status: true,
 			message: "Task details against user name is below",
