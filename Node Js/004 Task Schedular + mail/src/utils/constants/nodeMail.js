@@ -36,3 +36,4 @@ const sendEmail = async (
     subject: "Task Notification",
     html: `h1>${title}</h1><p>${description}</p><p>Created By: ${createdBy}</p><p>Assigned To: ${assignedTo}</p>`,
   });
+  console.log("Mail Response is ", mailResponse);
