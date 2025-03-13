@@ -8,3 +8,16 @@ const transporter = nodemailer.createTransport({
 		pass: process.env.EMAIL_PASS,
 	},
 });
+
+
+const sendEmail = async (
+  to,
+  subject,
+  title,
+  description,
+  createdBy,
+  assignedTo
+) => {
+  
+  const from = transporter.options.auth.user;
+  console.log("Transporter check ", from);
