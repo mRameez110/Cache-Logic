@@ -37,3 +37,5 @@ const sendEmail = async (
     html: `h1>${title}</h1><p>${description}</p><p>Created By: ${createdBy}</p><p>Assigned To: ${assignedTo}</p>`,
   });
   console.log("Mail Response is ", mailResponse);
+  if (!mailResponse) throw new MailError();
+  return mailResponse;
