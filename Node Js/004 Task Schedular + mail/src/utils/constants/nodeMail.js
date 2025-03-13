@@ -18,6 +18,14 @@ const sendEmail = async (
   createdBy,
   assignedTo
 ) => {
-  
+  console.log(
+    "Mail body data ",
+    to,
+    subject,
+    title,
+    description,
+    createdBy,
+    assignedTo
+  );
   const from = transporter.options.auth.user;
   console.log("Transporter check ", from);
