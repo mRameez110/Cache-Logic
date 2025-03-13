@@ -29,3 +29,10 @@ const sendEmail = async (
   );
   const from = transporter.options.auth.user;
   console.log("Transporter check ", from);
+
+  const mailResponse = await transporter.sendMail({
+    from,
+    to,
+    subject: "Task Notification",
+    html: `h1>${title}</h1><p>${description}</p><p>Created By: ${createdBy}</p><p>Assigned To: ${assignedTo}</p>`,
+  });
