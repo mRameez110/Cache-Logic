@@ -14,3 +14,10 @@ const taskCreateValidationSchema = joi
     assignedTo: joi.string().min(2).max(10).trim().required(),
   })
   .options({ abortEarly: true });
+
+const validation = (dataObject, validationSchema) => {
+  const { error } = validationSchema.validate(dataObject);
+  if (error) {
+    throw new Error(error.details.message);
+  }
+};
