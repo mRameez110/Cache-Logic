@@ -18,6 +18,6 @@ const taskCreateValidationSchema = joi
 const validation = (dataObject, validationSchema) => {
   const { error } = validationSchema.validate(dataObject);
   if (error) {
-    throw new Error(error.details.message);
+    throw new Error(error.details[0].message);
   }
 };
