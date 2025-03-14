@@ -1,6 +1,6 @@
 const registerValidationSchema = joi
   .object({
-    username: joi.string.trim().required(),
+    username: joi.string().min(3).max(50).trim().required(),
     email: joi.string().email().trim().required(),
     password: joi.string().required(),
   })
@@ -14,4 +14,3 @@ const taskCreateValidationSchema = joi
     assignedTo: joi.string().trim().required(),
   })
   .options({ abortEarly: true });
-;
