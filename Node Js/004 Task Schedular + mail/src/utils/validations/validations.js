@@ -8,7 +8,7 @@ const registerValidationSchema = joi
 
 const taskCreateValidationSchema = joi
   .object({
-    title: joi.string().trim().required(),
+    title: joi.string().min(5).max(15).trim().required(),
     description: joi.string().trim(),
     createdBy: joi.string().trim().required(),
     assignedTo: joi.string().trim().required(),
