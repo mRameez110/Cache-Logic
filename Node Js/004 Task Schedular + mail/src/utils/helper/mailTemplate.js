@@ -6,5 +6,8 @@ const taskMailTemplate = (title, description, createdBy, assignedTo) =>
      <p><strong>Task Description:</strong> ${description}</p>
       <p><strong>Task Created By:</strong> ${createdBy}</p>
      <p><strong>Task Assigned To:</strong> ${assignedTo}</p>
+      <footer style="margin-top: 25px; color: gray;">
+       <p>This is an automated email. Please do not reply.</p>
+     </footer>
 </div>
  `;
