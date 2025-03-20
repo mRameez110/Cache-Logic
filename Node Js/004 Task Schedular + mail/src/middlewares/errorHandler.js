@@ -1,15 +1,16 @@
+// Centralized error handler middleware
 const errorHandler = (err, req, res, next) => {
-	console.error(err.stack);
+  // Log the error stack for debugging
+  console.error(err.stack);
 
-	// Temporary log to see the error details
-	console.log("Error details:", err);
+  // Default error message and error code
+  const errorMessage = err.message || "Something went wrong";
+  const errorCode = err.errorCode || 500;
 
-	const errorMessage = err.message || "Something went wrong";
-	const errorCode = err.errorCode || 500;
-
-	res.status(errorCode).json({
-		status: false,
-		message: errorMessage,
-		data: null,
-	});
+  // Send a consistent error response
+  res.status(errorCode).json({
+    status: false,
+    message: errorMessage,
+    data: null,
+  });
 };
