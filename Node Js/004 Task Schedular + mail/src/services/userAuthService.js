@@ -50,3 +50,4 @@ const getUserService = async (dataObject) => {
 };
 
 
+module.exports = { registerService, getAllUsersService, getUserService };
