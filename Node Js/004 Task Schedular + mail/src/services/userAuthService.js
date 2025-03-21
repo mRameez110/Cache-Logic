@@ -23,31 +23,29 @@ const saltRounds = 10;
 const hashPassword = await bcrypt.hash(password, saltRounds);
 
 const registerNewUser = new userModel({
-  username,
-  email,
-  password: hashPassword,
+	username,
+	email,
+	password: hashPassword,
 });
 
 const user = await registerNewUser.save();
 return user;
 
 const getAllUsersService = async () => {
-  const users = await userModel.find();
-  if (!users) throw new BadRequestError("Could not retrieve users");
+	const users = await userModel.find();
+	if (!users) throw new BadRequestError("Could not retrieve users");
 
-  return users;
+	return users;
 };
 
 if (!users) throw new BadRequestError("Could not retrieve users");
 
-
 const getUserService = async (dataObject) => {
-  const userName = dataObject.params.username;
-  console.log("Request to fetch user:", userName);
+	const userName = dataObject.params.username;
+	console.log("Request to fetch user:", userName);
 
-  const user = await userModel.findOne({ username: userName });
-  return user;
+	const user = await userModel.findOne({ username: userName });
+	return user;
 };
-
 
 module.exports = { registerService, getAllUsersService, getUserService };
