@@ -23,37 +23,37 @@ if (!findTaskAssignedUser)
 		400
 	);
 
-  const newTask = new taskModel({
-    title,
-    description,
-    createdBy,
-    assignedTo,
-  });
-  
-  await newTask.save();
+const newTask = new taskModel({
+	title,
+	description,
+	createdBy,
+	assignedTo,
+});
+
+await newTask.save();
 return newTask;
 
-
 const getAllTasksService = async () => {
-  const tasks = await taskModel.find();
-  if (!tasks) throw new BadRequestError("No tasks exist", 400);
-  return tasks;
+	const tasks = await taskModel.find();
+	if (!tasks) throw new BadRequestError("No tasks exist", 400);
+	return tasks;
 };
 
 const getTaskService = async (dataObject) => {
-  const taskCratedBy = await taskModel.findOne({
-    createdBy: dataObject.params.username,
-  });
+	const taskCratedBy = await taskModel.findOne({
+		createdBy: dataObject.params.username,
+	});
 
-  console.log("See username for task ", taskCratedBy);
-  if (taskCratedBy) return taskCratedBy;
+	console.log("See username for task ", taskCratedBy);
+	if (taskCratedBy) return taskCratedBy;
 
-  const taskAssignedUsername = await taskModel.findOne({
-    assignedTo: dataObject.params.username,
-  });
+	const taskAssignedUsername = await taskModel.findOne({
+		assignedTo: dataObject.params.username,
+	});
 
-  if (taskAssignedUsername) return taskAssignedUsername;
+	if (taskAssignedUsername) return taskAssignedUsername;
 
-  throw new BadRequestError("Username doesn't exist", 400);
+	throw new BadRequestError("Username doesn't exist", 400);
 };
 
+module.exports = { createTaskService, getAllTasksService, getTaskService };
