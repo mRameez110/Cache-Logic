@@ -30,3 +30,6 @@ if (!findTaskAssignedUser)
     assignedTo,
   });
   
+  await newTask.save();
+return newTask;
+
