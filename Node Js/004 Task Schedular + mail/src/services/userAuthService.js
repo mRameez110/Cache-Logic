@@ -40,3 +40,13 @@ const getAllUsersService = async () => {
 
 if (!users) throw new BadRequestError("Could not retrieve users");
 
+
+const getUserService = async (dataObject) => {
+  const userName = dataObject.params.username;
+  console.log("Request to fetch user:", userName);
+
+  const user = await userModel.findOne({ username: userName });
+  return user;
+};
+
+
