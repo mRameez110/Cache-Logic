@@ -37,3 +37,6 @@ const getAllUsersService = async () => {
 
   return users;
 };
+
+if (!users) throw new BadRequestError("Could not retrieve users");
+
