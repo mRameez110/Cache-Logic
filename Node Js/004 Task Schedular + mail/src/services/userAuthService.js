@@ -30,3 +30,10 @@ const registerNewUser = new userModel({
 
 const user = await registerNewUser.save();
 return user;
+
+const getAllUsersService = async () => {
+  const users = await userModel.find();
+  if (!users) throw new BadRequestError("Could not retrieve users");
+
+  return users;
+};
