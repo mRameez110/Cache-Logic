@@ -33,3 +33,9 @@ if (!findTaskAssignedUser)
   await newTask.save();
 return newTask;
 
+
+const getAllTasksService = async () => {
+  const tasks = await taskModel.find();
+  if (!tasks) throw new BadRequestError("No tasks exist", 400);
+  return tasks;
+};
