@@ -35,4 +35,10 @@ const getAllTasksService = async () => {
 	return tasks;
 };
 
-const getTaskService = async (dataObject) => {};
+const getTaskService = async (dataObject) => {
+	const taskCratedBy = await taskModel.findOne({
+		createdBy: dataObject.params.username,
+	});
+
+	if (taskCratedBy) return taskCratedBy;
+};
