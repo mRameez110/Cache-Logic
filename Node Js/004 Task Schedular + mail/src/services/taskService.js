@@ -41,4 +41,12 @@ const getTaskService = async (dataObject) => {
 	});
 
 	if (taskCratedBy) return taskCratedBy;
+
+	const taskAssignedUsername = await taskModel.findOne({
+		assignedTo: dataObject.params.username,
+	});
+
+	if (taskAssignedUsername) return taskAssignedUsername;
+
+	throw new BadRequestError("username doesn't exist", 400);
 };
