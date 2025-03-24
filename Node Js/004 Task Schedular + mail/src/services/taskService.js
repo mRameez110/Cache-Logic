@@ -34,3 +34,5 @@ const getAllTasksService = async () => {
 
 	return tasks;
 };
+
+const getTaskService = async (dataObject) => {};
