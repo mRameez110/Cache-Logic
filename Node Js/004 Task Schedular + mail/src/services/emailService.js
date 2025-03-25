@@ -51,3 +51,23 @@ const htmlTemplate = emailTemplateCompile({
 });
 
 console.log("check generated html ", htmlTemplate);
+
+const mailResponse = await transporter.sendMail({
+  from,
+  to,
+  subject,
+  html: htmlTemplate,
+  attachments: [
+    {
+      filename: "logo.jpg",
+      path: path.join(__dirname, "../public", "logo.jpg"),
+      cid: "logo",
+    },
+    {
+      filename: "bidah.PNG",
+      path: path.join(__dirname, "../public/bidah.PNG"),
+    },
+  ],
+});
+
+console.log("Mail Response is ", mailResponse);
