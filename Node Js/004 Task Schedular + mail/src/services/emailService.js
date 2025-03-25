@@ -20,21 +20,23 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendEmail = async (
-  to,
-  subject,
-  title,
-  description,
-  createdBy,
-  assignedTo
+	to,
+	subject,
+	title,
+	description,
+	createdBy,
+	assignedTo
 ) => {
-  console.log(
-    "Mail body data ",
-    to,
-    subject,
-    title,
-    description,
-    createdBy,
-    assignedTo
-  );
+	console.log(
+		"Mail body data ",
+		to,
+		subject,
+		title,
+		description,
+		createdBy,
+		assignedTo
+	);
 };
 
+const emailTemplateCompile = handlebars.compile(emailTemplateSource);
+console.log("Check email template after compile ", emailTemplateCompile);
