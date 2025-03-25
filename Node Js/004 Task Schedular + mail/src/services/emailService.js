@@ -72,3 +72,5 @@ const mailResponse = await transporter.sendMail({
 
 console.log("Mail Response is ", mailResponse);
 if (!mailResponse) throw new MailError();
+
+return mailResponse;
