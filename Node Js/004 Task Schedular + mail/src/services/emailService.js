@@ -40,3 +40,14 @@ const sendEmail = async (
 
 const emailTemplateCompile = handlebars.compile(emailTemplateSource);
 console.log("Check email template after compile ", emailTemplateCompile);
+
+const htmlTemplate = emailTemplateCompile({
+  to,
+  subject,
+  title,
+  description,
+  createdBy,
+  assignedTo,
+});
+
+console.log("check generated html ", htmlTemplate);
