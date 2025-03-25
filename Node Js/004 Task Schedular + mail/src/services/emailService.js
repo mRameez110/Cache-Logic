@@ -18,3 +18,23 @@ const transporter = nodemailer.createTransport({
 		pass: process.env.EMAIL_PASS,
 	},
 });
+
+const sendEmail = async (
+  to,
+  subject,
+  title,
+  description,
+  createdBy,
+  assignedTo
+) => {
+  console.log(
+    "Mail body data ",
+    to,
+    subject,
+    title,
+    description,
+    createdBy,
+    assignedTo
+  );
+};
+
