@@ -2,6 +2,12 @@
 
 require("dotenv").config();
 const express = require("express");
+const userRoute = require("./api/routes/userRoute");
+const taskRoute = require("./api/routes/taskRoute");
+
+app.use("/api/users", userRoute);
+app.use("/api/tasks", taskRoute);
+
 
 const { default: helmet } = require("helmet");
 const cors = require("cors");
