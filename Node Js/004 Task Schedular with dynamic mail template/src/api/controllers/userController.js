@@ -9,7 +9,6 @@ const {
 } = require("../../utils/validations/validations");
 
 const createUser = async (req, res, next) => {
-	// Validate the request body against the schema
 	try {
 		validation(req.body, registerValidationSchema);
 		const result = await registerService(req.body);
@@ -25,7 +24,6 @@ const createUser = async (req, res, next) => {
 };
 
 const getAllUsers = async (req, res, next) => {
-	// Fetch all users
 	try {
 		const users = await getAllUsersService();
 
@@ -40,7 +38,6 @@ const getAllUsers = async (req, res, next) => {
 };
 
 const getUserByUserName = async (req, res, next) => {
-	// Fetch user by username
 	try {
 		const user = await getUserService(req);
 
@@ -53,3 +50,5 @@ const getUserByUserName = async (req, res, next) => {
 		next(error);
 	}
 };
+
+module.exports = { createUser, getAllUsers, getUserByUserName };
