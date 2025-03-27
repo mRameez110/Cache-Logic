@@ -9,13 +9,16 @@ const {
 } = require("../../utils/validations/validations");
 
 const createUser = async (req, res, next) => {
-  // Function implementation will be added later
-};
+  try {
+    validation(req.body, registerValidationSchema);
+    const result = await registerService(req.body);
 
-const getAllUsers = async (req, res, next) => {
-  // Function implementation will be added later
-};
-
-const getUserByUserName = async (req, res, next) => {
-  // Function implementation will be added later
+    res.status(200).json({
+      status: true,
+      message: "User created Successfully",
+      data: result,
+    });
+  } catch (err) {
+    next(err);
+  }
 };
