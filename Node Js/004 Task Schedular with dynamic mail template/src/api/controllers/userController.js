@@ -15,3 +15,7 @@ const createUser = async (req, res, next) => {
 const getAllUsers = async (req, res, next) => {
   // Function implementation will be added later
 };
+
+const getUserByUserName = async (req, res, next) => {
+  // Function implementation will be added later
+};
