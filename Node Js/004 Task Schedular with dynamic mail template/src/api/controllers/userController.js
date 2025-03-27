@@ -8,4 +8,6 @@ const {
 	validation,
 } = require("../../utils/validations/validations");
 
-// Placeholder for controller functions (to be added later)
+const createUser = async (req, res, next) => {
+	// Function implementation will be added later
+};
