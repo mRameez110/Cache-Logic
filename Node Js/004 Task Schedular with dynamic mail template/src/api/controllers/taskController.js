@@ -13,7 +13,7 @@ const { response } = require("express");
 
 const createTask = async (req, res, next) => {
 	try {
-    
+		validation(req.body, taskCreateValidationSchema); // Add validation
 	} catch (err) {
 		next(err);
 	}
