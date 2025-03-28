@@ -16,13 +16,23 @@ const createTask = async (req, res, next) => {
 		validation(req.body, taskCreateValidationSchema);
 
 		const newTask = await createTaskService(req.body);
-		const { assignedTo, title, description, createdBy } = newTask;
+
+		const { title, description, createdBy, assignedTo } = newTask;
+
+		console.log(
+			"new task created detail is",
+			title,
+			description,
+			createdBy,
+			assignedTo
+		);
 
 		const assignedUser = await userModel.findOne({
 			username: assignedTo,
 		});
-
+		console.log("Task assigned to details ", assignedUser);
 		const receiverMail = assignedUser.email;
+
 		sendEmail(
 			receiverMail,
 			"Task Notification",
@@ -32,7 +42,7 @@ const createTask = async (req, res, next) => {
 			assignedTo
 		)
 			.then((response) => {
-				console.log("Email sent successfully", response);
+				console.log("Email sended successfully", response);
 				res.status(201).json({
 					status: true,
 					message: "Task created successfully",
@@ -40,7 +50,7 @@ const createTask = async (req, res, next) => {
 				});
 			})
 			.catch((err) => {
-				console.log("Error in sending email", err);
+				console.log("Error in sending Email to user or client", err);
 				next(err);
 			});
 	} catch (err) {
@@ -51,6 +61,7 @@ const createTask = async (req, res, next) => {
 const getAllTasks = async (req, res, next) => {
 	try {
 		const tasks = await getAllTasksService();
+
 		res.status(200).send({
 			status: true,
 			message: "All task List is below",
@@ -63,7 +74,7 @@ const getAllTasks = async (req, res, next) => {
 
 const getTaskByUsername = async (req, res, next) => {
 	try {
-		const task = await getTaskService(req); // Fetch task by username using service
+		const task = await getTaskService(req);
 		res.status(200).send({
 			status: true,
 			message: "Task details against user name is below",
