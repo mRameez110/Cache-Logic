@@ -12,11 +12,14 @@ const {
 const { response } = require("express");
 
 const createTask = async (req, res, next) => {
-	try {
-		validation(req.body, taskCreateValidationSchema);
+  try {
+    validation(req.body, taskCreateValidationSchema);
 
-		const newTask = await createTaskService(req.body); // Call service to create task
-	} catch (err) {
-		next(err);
-	}
+    const newTask = await createTaskService(req.body);
+    const { title, description, createdBy, assignedTo } = newTask;
+    console.log("new task created detail is", title, description, createdBy, assignedTo);  // Log task details
+  } catch (err) {
+    next(err);
+  }
 };
+
