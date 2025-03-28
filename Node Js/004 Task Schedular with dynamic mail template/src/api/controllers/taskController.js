@@ -12,17 +12,38 @@ const {
 const { response } = require("express");
 
 const createTask = async (req, res, next) => {
-  try {
-    validation(req.body, taskCreateValidationSchema);
+	try {
+		validation(req.body, taskCreateValidationSchema);
 
-    const newTask = await createTaskService(req.body);
-    const { assignedTo } = newTask;
+		const newTask = await createTaskService(req.body);
+		const { assignedTo, title, description, createdBy } = newTask;
 
-    const assignedUser = await userModel.findOne({
-      username: assignedTo,  // Fetch assigned user details
-    });
-    console.log("Task assigned to details", assignedUser);
-  } catch (err) {
-    next(err);
-  }
+		const assignedUser = await userModel.findOne({
+			username: assignedTo,
+		});
+
+		const receiverMail = assignedUser.email;
+		sendEmail(
+			receiverMail,
+			"Task Notification",
+			title,
+			description,
+			createdBy,
+			assignedTo
+		)
+			.then((response) => {
+				console.log("Email sent successfully", response);
+				res.status(201).json({
+					status: true,
+					message: "Task created successfully",
+					task: newTask,
+				});
+			})
+			.catch((err) => {
+				console.log("Error in sending email", err);
+				next(err);
+			});
+	} catch (err) {
+		next(err);
+	}
 };
