@@ -16,10 +16,13 @@ const createTask = async (req, res, next) => {
     validation(req.body, taskCreateValidationSchema);
 
     const newTask = await createTaskService(req.body);
-    const { title, description, createdBy, assignedTo } = newTask;
-    console.log("new task created detail is", title, description, createdBy, assignedTo);  // Log task details
+    const { assignedTo } = newTask;
+
+    const assignedUser = await userModel.findOne({
+      username: assignedTo,  // Fetch assigned user details
+    });
+    console.log("Task assigned to details", assignedUser);
   } catch (err) {
     next(err);
   }
 };
-
