@@ -50,6 +50,12 @@ const createTask = async (req, res, next) => {
 
 const getAllTasks = async (req, res, next) => {
 	try {
+		const tasks = await getAllTasksService();
+		res.status(200).send({
+			status: true,
+			message: "All task List is below",
+			data: tasks,
+		});
 	} catch (error) {
 		next(error);
 	}
