@@ -1,4 +1,3 @@
-
 const {
 	createTaskService,
 	getAllTasksService,
@@ -11,3 +10,11 @@ const {
 	validation,
 } = require("../../utils/validations/validations");
 const { response } = require("express");
+
+const createTask = async (req, res, next) => {
+	try {
+    
+	} catch (err) {
+		next(err);
+	}
+};
