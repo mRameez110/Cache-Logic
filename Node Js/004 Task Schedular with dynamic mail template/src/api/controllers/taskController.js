@@ -47,3 +47,10 @@ const createTask = async (req, res, next) => {
 		next(err);
 	}
 };
+
+const getAllTasks = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
