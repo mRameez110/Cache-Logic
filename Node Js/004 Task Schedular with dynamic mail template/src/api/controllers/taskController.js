@@ -13,7 +13,9 @@ const { response } = require("express");
 
 const createTask = async (req, res, next) => {
 	try {
-		validation(req.body, taskCreateValidationSchema); // Add validation
+		validation(req.body, taskCreateValidationSchema);
+
+		const newTask = await createTaskService(req.body); // Call service to create task
 	} catch (err) {
 		next(err);
 	}
