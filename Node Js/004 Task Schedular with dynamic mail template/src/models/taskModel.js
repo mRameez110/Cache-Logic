@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// Define the task schema with fields title, description, createdBy, and assignedTo
 const taskSchema = new mongoose.Schema(
 	{
 		title: {
@@ -19,3 +18,5 @@ const taskSchema = new mongoose.Schema(
 	},
 	{ timestamps: true }
 );
+
+module.exports = mongoose.model("Task", taskSchema);
