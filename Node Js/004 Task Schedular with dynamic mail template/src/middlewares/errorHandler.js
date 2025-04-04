@@ -10,3 +10,5 @@ const errorHandler = (err, req, res, next) => {
 		data: null,
 	});
 };
+
+module.exports = errorHandler;
