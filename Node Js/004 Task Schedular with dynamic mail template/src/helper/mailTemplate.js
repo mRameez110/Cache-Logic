@@ -7,6 +7,8 @@ const taskMailTemplate = (
 
 <h2 style="color: green;">Task Notification</h2>
 <h4><strong>Task Title:</strong> ${title}</h4>
+<p><strong>Task Description:</strong> ${description}</p>
+
 
 
 </div>`;
