@@ -14,5 +14,6 @@ const taskMailTemplate = (
   <p>This is an automated email. Please do not reply.</p>
 </footer>
 
-
 </div>`;
+
+module.exports = { taskMailTemplate };
