@@ -11,3 +11,9 @@ class RouteNotFoundError extends AppError {
     super(message, errorCode);
   }
 }
+
+class UserAlreadyExistError extends AppError {
+  constructor(message = "User Already Exist", errorCode = 400) {
+    super(message, errorCode);
+  }
+}
