@@ -23,3 +23,9 @@ class BadRequestError extends AppError {
     super(message, errorCode);
   }
 }
+
+class MailError extends AppError {
+  constructor(message = "Error in Mail generation/transfer", errorCode = 500) {
+    super(message, errorCode);
+  }
+}
