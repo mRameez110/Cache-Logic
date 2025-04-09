@@ -47,3 +47,10 @@ class NotFoundError extends AppError {
     super(message, errorCode);
   }
 }
+
+class ValidationError extends AppError {
+  constructor(message = "Validation failed", errorCode = 422) {
+    super(message, errorCode);
+  }
+}
+
