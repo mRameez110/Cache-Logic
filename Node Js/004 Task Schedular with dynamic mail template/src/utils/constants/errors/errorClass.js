@@ -41,3 +41,9 @@ class ForbiddenError extends AppError {
     super(message, errorCode);
   }
 }
+
+class NotFoundError extends AppError {
+  constructor(message = "Requested resource not found", errorCode = 404) {
+    super(message, errorCode);
+  }
+}
