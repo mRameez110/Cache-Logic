@@ -60,3 +60,15 @@ class DatabaseError extends AppError {
   }
 }
 
+module.exports = {
+  AppError,
+  RouteNotFoundError,
+  UserAlreadyExistError,
+  BadRequestError,
+  MailError,
+  UnauthorizedError,
+  ForbiddenError,
+  NotFoundError,
+  ValidationError,
+  DatabaseError,
+};
