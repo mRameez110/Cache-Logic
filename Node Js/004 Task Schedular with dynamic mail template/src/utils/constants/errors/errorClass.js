@@ -54,3 +54,9 @@ class ValidationError extends AppError {
   }
 }
 
+class DatabaseError extends AppError {
+  constructor(message = "Database operation failed", errorCode = 500) {
+    super(message, errorCode);
+  }
+}
+
