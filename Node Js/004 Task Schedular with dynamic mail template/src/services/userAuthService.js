@@ -18,3 +18,16 @@ const registerService = async (dataObject) => {
   if (userEmailAlreadyExist) {
     throw new UserAlreadyExistError("Email already in use", 400);
   }
+  const saltRounds = 10;
+  const hashPassword = await bcrypt.hash(password, saltRounds);
+
+  const registerNewUser = new userModel({
+    username,
+    email,
+    password: hashPassword,
+  });
+
+  const user = await registerNewUser.save();
+  return user;
+};
+
