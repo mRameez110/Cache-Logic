@@ -12,3 +12,9 @@ const registerService = async (dataObject) => {
   if (userNameAlreadyExist) {
     throw new UserAlreadyExistError("Username already in use", 400);
   }
+
+  const userEmailAlreadyExist = await userModel.findOne({ email });
+
+  if (userEmailAlreadyExist) {
+    throw new UserAlreadyExistError("Email already in use", 400);
+  }
