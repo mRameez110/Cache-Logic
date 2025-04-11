@@ -4,3 +4,5 @@ const { BadRequestError } = require("../utils/constants/errors/errorClass");
 
 const createTaskService = async (dataObject) => {
   const { title, description, createdBy, assignedTo } = dataObject;
+  const findTaskCrater = await userModel.findOne({ username: createdBy });
+  console.log("Task crater finding ", findTaskCrater);
