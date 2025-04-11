@@ -28,3 +28,5 @@ const createTaskService = async (dataObject) => {
 	await newTask.save();
 	return newTask;
 };
+const getAllTasksService = async () => {
+  const tasks = await taskModel.find();
