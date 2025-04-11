@@ -35,14 +35,19 @@ const getAllTasksService = async () => {
 	return tasks;
 };
 const getTaskService = async (dataObject) => {
-  const taskCratedBy = await taskModel.findOne({
-    createdBy: dataObject.params.username,
-  });
-  console.log("See username for task ", taskCratedBy);
-  if (taskCratedBy) return taskCratedBy;
-  const taskAssignedUsername = await taskModel.findOne({
-    assignedTo: dataObject.params.username,
-  });
-  if (taskAssignedUsername) return taskAssignedUsername;
-  throw new BadRequestError("username does't exist", 400);
+	const taskCratedBy = await taskModel.findOne({
+		createdBy: dataObject.params.username,
+	});
+	console.log("See username for task ", taskCratedBy);
+	if (taskCratedBy) return taskCratedBy;
+	const taskAssignedUsername = await taskModel.findOne({
+		assignedTo: dataObject.params.username,
+	});
+	if (taskAssignedUsername) return taskAssignedUsername;
+	throw new BadRequestError("username does't exist", 400);
+};
+module.exports = {
+	createTaskService,
+	getAllTasksService,
+	getTaskService,
 };
