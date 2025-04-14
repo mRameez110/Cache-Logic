@@ -47,3 +47,9 @@ const htmlTemplate = emailTemplateCompile({
   assignedTo,
 });
 console.log("check generated html ", htmlTemplate);
+  // const htmlContent = taskMailTemplate(
+  //   title,
+  //   description,
+  //   createdBy,
+  //   assignedTo
+  // );
