@@ -46,3 +46,4 @@ const htmlTemplate = emailTemplateCompile({
   createdBy,
   assignedTo,
 });
+console.log("check generated html ", htmlTemplate);
