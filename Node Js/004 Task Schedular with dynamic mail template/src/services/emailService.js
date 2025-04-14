@@ -73,3 +73,5 @@ console.log("check generated html ", htmlTemplate);
   });
   console.log("Mail Response is ", mailResponse);
   if (!mailResponse) throw new MailError();
+  return mailResponse;
+};
