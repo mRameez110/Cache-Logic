@@ -8,3 +8,4 @@ const bodyParser = require("body-parser");
 const userRoute = require("./api/routes/userRoute");
 const taskRoute = require("./api/routes/taskRoute");
 const uploadRoute = require("./api/routes/uploadRoute");
+const errorHandler = require("./middlewares/errorHandler");
