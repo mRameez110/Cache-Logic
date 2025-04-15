@@ -6,3 +6,4 @@ const compression = require("compression");
 const bodyParser = require("body-parser");
 
 const userRoute = require("./api/routes/userRoute");
+const taskRoute = require("./api/routes/taskRoute");
