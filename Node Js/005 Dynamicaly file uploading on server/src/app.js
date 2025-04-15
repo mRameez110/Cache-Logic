@@ -10,3 +10,4 @@ const taskRoute = require("./api/routes/taskRoute");
 const uploadRoute = require("./api/routes/uploadRoute");
 const errorHandler = require("./middlewares/errorHandler");
 const { RouteNotFoundError } = require("./utils/constants/errors/errorClass");
+const connectDB = require("./utils/helper/db/connection");
