@@ -15,3 +15,4 @@ const connectDB = require("./utils/helper/db/connection");
 const app = express();
 connectDB();
 app.use(helmet());
+app.use(cors());
