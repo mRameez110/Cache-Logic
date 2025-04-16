@@ -30,3 +30,7 @@ app.use("/uploads", express.static("src/public/uploadDir"));
 app.use("/upload", uploadRoute);
 app.use("/api/users", userRoute);
 app.use("/api/tasks", taskRoute);
+
+app.all("*", (req, res) => {
+	throw new RouteNotFoundError();
+});
