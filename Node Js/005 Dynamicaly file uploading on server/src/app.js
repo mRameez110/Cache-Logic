@@ -34,3 +34,5 @@ app.use("/api/tasks", taskRoute);
 app.all("*", (req, res) => {
 	throw new RouteNotFoundError();
 });
+
+app.use(errorHandler);
