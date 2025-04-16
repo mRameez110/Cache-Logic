@@ -25,3 +25,5 @@ app.use((req, res, next) => {
 	console.log(`Request URL: ${req.url}`);
 	next();
 });
+
+app.use("/uploads", express.static("src/public/uploadDir"));
