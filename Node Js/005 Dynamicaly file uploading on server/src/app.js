@@ -20,3 +20,8 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const PORT = process.env.PORT || 3001;
+
+app.use((req, res, next) => {
+	console.log(`Request URL: ${req.url}`);
+	next();
+});
