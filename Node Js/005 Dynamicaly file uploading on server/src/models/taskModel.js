@@ -5,3 +5,4 @@ const taskSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    description: String,
