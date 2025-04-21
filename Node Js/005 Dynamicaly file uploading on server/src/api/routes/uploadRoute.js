@@ -4,3 +4,8 @@ const upload = require("../../utils/helper/upload");
 const router = express.Router();
 
 router.post("/", upload.single("image"), (req, res) => {
+
+  if (!req.file) {
+    return res.status(400).send("No file uploaded or invalid file type.");
+  }
+  
