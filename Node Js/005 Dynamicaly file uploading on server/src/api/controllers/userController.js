@@ -42,4 +42,7 @@ const createUser = async (req, res, next) => {
           message: "user details are below",
           data: user,
         });
-        
+      } catch (error) {
+        next(error);
+      }
+      
