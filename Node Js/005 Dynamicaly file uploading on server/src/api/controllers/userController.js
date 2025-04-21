@@ -34,4 +34,4 @@ const createUser = async (req, res, next) => {
     } catch (error) {
       next(error);
     }
-    
+    const getUserByUserName = async (req, res, next) => {
