@@ -35,3 +35,6 @@ const createUser = async (req, res, next) => {
       next(error);
     }
     const getUserByUserName = async (req, res, next) => {
+      try {
+        const user = await getUserService(req);
+      
