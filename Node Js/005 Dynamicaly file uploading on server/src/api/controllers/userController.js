@@ -31,4 +31,7 @@ const createUser = async (req, res, next) => {
         message: "All user request successful",
         data: users,
       });
-      
+    } catch (error) {
+      next(error);
+    }
+    
