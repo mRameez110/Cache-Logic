@@ -16,3 +16,4 @@ router.post("/", upload.single("image"), (req, res) => {
     path: req.body.path,
   });
   
+  module.exports = router;
