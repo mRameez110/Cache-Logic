@@ -45,4 +45,4 @@ const createUser = async (req, res, next) => {
       } catch (error) {
         next(error);
       }
-      
+      module.exports = { createUser, getAllUsers, getUserByUserName };
