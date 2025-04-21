@@ -18,4 +18,7 @@ const createUser = async (req, res, next) => {
       message: "User created Successfully",
       data: result,
     });
-    
+  } catch (err) {
+    next(err);
+  }
+  
