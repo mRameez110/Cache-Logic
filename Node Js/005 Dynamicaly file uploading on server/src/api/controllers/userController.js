@@ -22,3 +22,6 @@ const createUser = async (req, res, next) => {
     next(err);
   }
   
+  const getAllUsers = async (req, res, next) => {
+
+    
