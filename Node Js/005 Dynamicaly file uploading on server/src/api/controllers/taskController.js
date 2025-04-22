@@ -23,3 +23,7 @@ console.log(
   assignedTo
 );
 
+const assignedUser = await userModel.findOne({
+  username: assignedTo,
+});
+console.log("Task assigned to details ", assignedUser);
