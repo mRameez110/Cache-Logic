@@ -45,3 +45,7 @@ sendEmail(
     task: newTask,
   });
 })
+.catch((err) => {
+  console.log("Error in sending Email to user or client", err);
+  next(err);
+});
