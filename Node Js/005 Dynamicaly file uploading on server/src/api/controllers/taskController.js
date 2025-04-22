@@ -11,3 +11,6 @@ const {
 } = require("../../utils/validations/validations");
 
 const createTask = async (req, res, next) => {
+  validation(req.body, taskCreateValidationSchema);
+const newTask = await createTaskService(req.body);
+
