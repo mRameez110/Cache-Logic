@@ -37,3 +37,11 @@ sendEmail(
   createdBy,
   assignedTo
 )
+.then((response) => {
+  console.log("Email sended successfully", response);
+  res.status(201).json({
+    status: true,
+    message: "Task created successfully",
+    task: newTask,
+  });
+})
