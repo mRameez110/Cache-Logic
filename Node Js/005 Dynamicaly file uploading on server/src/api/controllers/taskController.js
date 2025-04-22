@@ -9,43 +9,51 @@ const {
 	taskCreateValidationSchema,
 	validation,
 } = require("../../utils/validations/validations");
+const { response } = require("express");
 
 const createTask = async (req, res, next) => {
-  validation(req.body, taskCreateValidationSchema);
-const newTask = await createTaskService(req.body);
-const { title, description, createdBy, assignedTo } = newTask;
+	try {
+		validation(req.body, taskCreateValidationSchema);
 
-console.log(
-  "new task created detail is",
-  title,
-  description,
-  createdBy,
-  assignedTo
-);
+		const newTask = await createTaskService(req.body);
 
-const assignedUser = await userModel.findOne({
-  username: assignedTo,
-});
-console.log("Task assigned to details ", assignedUser);
-const receiverMail = assignedUser.email;
+		const { title, description, createdBy, assignedTo } = newTask;
 
-sendEmail(
-  receiverMail,
-  "Task Notification",
-  title,
-  description,
-  createdBy,
-  assignedTo
-)
-.then((response) => {
-  console.log("Email sended successfully", response);
-  res.status(201).json({
-    status: true,
-    message: "Task created successfully",
-    task: newTask,
-  });
-})
-.catch((err) => {
-  console.log("Error in sending Email to user or client", err);
-  next(err);
-});
+		console.log(
+			"new task created detail is",
+			title,
+			description,
+			createdBy,
+			assignedTo
+		);
+
+		const assignedUser = await userModel.findOne({
+			username: assignedTo,
+		});
+		console.log("Task assigned to details ", assignedUser);
+		const receiverMail = assignedUser.email;
+
+		sendEmail(
+			receiverMail,
+			"Task Notification",
+			title,
+			description,
+			createdBy,
+			assignedTo
+		)
+			.then((response) => {
+				console.log("Email sended successfully", response);
+				res.status(201).json({
+					status: true,
+					message: "Task created successfully",
+					task: newTask,
+				});
+			})
+			.catch((err) => {
+				console.log("Error in sending Email to user or client", err);
+				next(err);
+			});
+	} catch (err) {
+		next(err);
+	}
+};
