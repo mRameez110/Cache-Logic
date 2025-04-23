@@ -71,3 +71,5 @@ const getAllTasks = async (req, res, next) => {
 		next(error);
 	}
 };
+
+const getTaskByUsername = async (req, res, next) => {
