@@ -80,4 +80,7 @@ const getTaskByUsername = async (req, res, next) => {
 			message: "Task details against user name is below",
 			data: task,
 		});
-		
+	} catch (error) {
+		next(error);
+	}
+	
