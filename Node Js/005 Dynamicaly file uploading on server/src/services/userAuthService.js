@@ -29,3 +29,6 @@ const registerService = async (dataObject) => {
   return user;
   const getAllUsersService = async () => {
     const users = await userModel.find();
+    if (!users) throw new BadRequestError("Not get the users");
+
+    return users;
