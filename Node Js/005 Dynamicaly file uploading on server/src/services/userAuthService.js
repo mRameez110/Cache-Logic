@@ -6,3 +6,4 @@ const {
 } = require("../utils/constants/errors/errorClass");
 
 const registerService = async (dataObject) => {
+  const { username, email, password } = dataObject;
