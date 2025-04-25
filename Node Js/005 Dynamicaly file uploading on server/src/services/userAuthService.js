@@ -19,3 +19,11 @@ const registerService = async (dataObject) => {
   }
   const saltRounds = 10;
   const hashPassword = await bcrypt.hash(password, saltRounds);
+  const registerNewUser = new userModel({
+    username,
+    email,
+    password: hashPassword,
+  });
+
+  const user = await registerNewUser.save();
+  return user;
