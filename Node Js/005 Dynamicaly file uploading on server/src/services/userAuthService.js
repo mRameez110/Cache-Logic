@@ -4,3 +4,5 @@ const {
 	UserAlreadyExistError,
 	BadRequestError,
 } = require("../utils/constants/errors/errorClass");
+
+const registerService = async (dataObject) => {
