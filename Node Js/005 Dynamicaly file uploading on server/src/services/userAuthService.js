@@ -6,29 +6,43 @@ const {
 } = require("../utils/constants/errors/errorClass");
 
 const registerService = async (dataObject) => {
-  const { username, email, password } = dataObject;
-  const userNameAlreadyExist = await userModel.findOne({ username });
+	const { username, email, password } = dataObject;
+	const userNameAlreadyExist = await userModel.findOne({ username });
 
-  if (userNameAlreadyExist) {
-    throw new UserAlreadyExistError("Username already in use", 400);
-  }
-  const userEmailAlreadyExist = await userModel.findOne({ email });
+	if (userNameAlreadyExist) {
+		throw new UserAlreadyExistError("Username already in use", 400);
+	}
 
-  if (userEmailAlreadyExist) {
-    throw new UserAlreadyExistError("Email already in use", 400);
-  }
-  const saltRounds = 10;
-  const hashPassword = await bcrypt.hash(password, saltRounds);
-  const registerNewUser = new userModel({
-    username,
-    email,
-    password: hashPassword,
-  });
+	const userEmailAlreadyExist = await userModel.findOne({ email });
 
-  const user = await registerNewUser.save();
-  return user;
-  const getAllUsersService = async () => {
-    const users = await userModel.find();
-    if (!users) throw new BadRequestError("Not get the users");
+	if (userEmailAlreadyExist) {
+		throw new UserAlreadyExistError("Email already in use", 400);
+	}
 
-    return users;
+	const saltRounds = 10;
+	const hashPassword = await bcrypt.hash(password, saltRounds);
+
+	const registerNewUser = new userModel({
+		username,
+		email,
+		password: hashPassword,
+	});
+
+	const user = await registerNewUser.save();
+	return user;
+};
+
+const getAllUsersService = async () => {
+	const users = await userModel.find();
+	if (!users) throw new BadRequestError("Not get the users");
+
+	return users;
+};
+
+const getUserService = async (dataObject) => {
+	const userName = dataObject.params.username;
+	console.log("See data of body ", userName);
+
+	const user = await userModel.findOne({ username: userName });
+	return user;
+};
