@@ -38,3 +38,4 @@ const createTaskService = async (dataObject) => {
       assignedTo: dataObject.params.username,
     });
     if (taskAssignedUsername) return taskAssignedUsername;
+    throw new BadRequestError("username does't exist", 400);
