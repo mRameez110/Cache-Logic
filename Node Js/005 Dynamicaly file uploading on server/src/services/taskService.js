@@ -39,5 +39,5 @@ const createTaskService = async (dataObject) => {
     });
     if (taskAssignedUsername) return taskAssignedUsername;
     throw new BadRequestError("username does't exist", 400);
-
-    module.exports = { createTaskService };
+  }
+  module.exports = { createTaskService, getAllTasksService};
