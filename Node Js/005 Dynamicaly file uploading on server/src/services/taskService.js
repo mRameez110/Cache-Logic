@@ -33,3 +33,4 @@ const createTaskService = async (dataObject) => {
     });
 
     console.log("See username for task ", taskCratedBy);
+    if (taskCratedBy) return taskCratedBy;
