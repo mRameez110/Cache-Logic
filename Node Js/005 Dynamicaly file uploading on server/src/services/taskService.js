@@ -14,3 +14,8 @@ const createTaskService = async (dataObject) => {
   const findTaskAssignedUser = await userModel.findOne({
     username: assignedTo,
   });
+  if (!findTaskAssignedUser)
+    throw new BadRequestError(
+      "Assigned user name does't exist. Username must exist to assign task",
+      400
+    );
