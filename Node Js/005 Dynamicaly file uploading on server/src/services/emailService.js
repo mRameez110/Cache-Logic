@@ -39,3 +39,14 @@ const sendEmail = async (
   console.log("Check email template after compile ", emailTemplateCompile);
 
 
+  const htmlTemplate = emailTemplateCompile({
+    to,
+    subject,
+    title,
+    description,
+    createdBy,
+    assignedTo,
+  });
+
+  console.log("check generated html ", htmlTemplate);
+
