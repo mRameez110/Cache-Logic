@@ -24,4 +24,13 @@ const sendEmail = async (
   createdBy,
   assignedTo
 ) => {
+  console.log(
+    "Mail body data ",
+    to,
+    subject,
+    title,
+    description,
+    createdBy,
+    assignedTo
+  );
 
