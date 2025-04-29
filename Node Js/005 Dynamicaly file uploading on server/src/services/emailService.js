@@ -16,3 +16,12 @@ const transporter = nodemailer.createTransport({
 		pass: process.env.EMAIL_PASS,
 	},
 });
+const sendEmail = async (
+  to,
+  subject,
+  title,
+  description,
+  createdBy,
+  assignedTo
+) => {
+
