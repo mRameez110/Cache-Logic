@@ -49,4 +49,10 @@ const sendEmail = async (
   });
 
   console.log("check generated html ", htmlTemplate);
+  // const htmlContent = taskMailTemplate(
+  //   title,
+  //   description,
+  //   createdBy,
+  //   assignedTo
+  // );
 
