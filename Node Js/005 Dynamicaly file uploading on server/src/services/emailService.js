@@ -74,3 +74,4 @@ const sendEmail = async (
     ],
   });
 
+  console.log("Mail Response is ", mailResponse);
