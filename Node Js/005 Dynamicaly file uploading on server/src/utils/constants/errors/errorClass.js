@@ -29,3 +29,5 @@ class MailError extends AppError {
 		super(message, errorCode);
 	}
 }
+
+module.exports = {};
