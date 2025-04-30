@@ -5,3 +5,5 @@ class AppError extends Error {
 		this.errorCode = errorCode;
 	}
 }
+
+class RouteNotFoundError extends AppError {}
