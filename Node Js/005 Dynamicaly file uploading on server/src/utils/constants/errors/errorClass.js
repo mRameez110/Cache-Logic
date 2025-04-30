@@ -17,3 +17,9 @@ class UserAlreadyExistError extends AppError {
 		super(message, errorCode);
 	}
 }
+
+class BadRequestError extends AppError {
+	constructor(message = "Bad Request", errorCode = 400) {
+		super(message, errorCode);
+	}
+}
