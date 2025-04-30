@@ -30,4 +30,10 @@ class MailError extends AppError {
 	}
 }
 
-module.exports = { AppError };
+module.exports = {
+	AppError,
+	RouteNotFoundError,
+	UserAlreadyExistError,
+	BadRequestError,
+	MailError,
+};
