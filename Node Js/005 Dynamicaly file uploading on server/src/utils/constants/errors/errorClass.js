@@ -30,4 +30,4 @@ class MailError extends AppError {
 	}
 }
 
-module.exports = {};
+module.exports = { AppError };
