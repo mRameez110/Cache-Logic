@@ -14,5 +14,6 @@ destination: (req, file, cb) => {
 	if (!fs.existsSync(folder)) {
 		fs.mkdirSync(folder, { recursive: true });
 	}
-		
+	cb(null, folder);
+
 };
