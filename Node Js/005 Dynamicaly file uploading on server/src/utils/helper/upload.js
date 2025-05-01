@@ -17,4 +17,12 @@ destination: (req, file, cb) => {
 	cb(null, folder);
 	filename: (req, file, cb) => { const uniqueName = `${Date.now()}${path.extname(file.originalname)}`;
 }	
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith("image/")) {
+    cb(null, true);
+  } else {
+    cb(new Error("Only image files are allowed!"), false);
+  }
+};
+
 };
