@@ -55,3 +55,5 @@ const fileFilter = (req, file, cb) => {
 
 // Export configured multer instance
 const upload = multer({ storage, fileFilter });
+
+module.exports = upload;
