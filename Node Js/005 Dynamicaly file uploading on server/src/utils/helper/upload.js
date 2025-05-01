@@ -15,7 +15,6 @@ destination: (req, file, cb) => {
 		fs.mkdirSync(folder, { recursive: true });
 	}
 	cb(null, folder);
-	filename: (req, file, cb) => { ... }
-
-
+	filename: (req, file, cb) => { const uniqueName = `${Date.now()}${path.extname(file.originalname)}`;
+}	
 };
