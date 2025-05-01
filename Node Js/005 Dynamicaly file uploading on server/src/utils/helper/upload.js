@@ -15,5 +15,7 @@ destination: (req, file, cb) => {
 		fs.mkdirSync(folder, { recursive: true });
 	}
 	cb(null, folder);
+	filename: (req, file, cb) => { ... }
+
 
 };
