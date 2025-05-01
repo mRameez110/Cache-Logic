@@ -11,5 +11,8 @@ destination: (req, file, cb) => {
 		case "cover": ...
 		default: ...
 	}
-	
+	if (!fs.existsSync(folder)) {
+		fs.mkdirSync(folder, { recursive: true });
+	}
+		
 };
