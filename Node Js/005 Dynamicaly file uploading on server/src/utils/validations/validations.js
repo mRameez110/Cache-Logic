@@ -22,3 +22,7 @@ const validation = (dataObject, validationSchema) => {
 		throw new Error(error.details[0].message);
 	}
 };
+
+module.exports = {
+	registerValidationSchema,
+};
