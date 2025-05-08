@@ -26,4 +26,5 @@ const validation = (dataObject, validationSchema) => {
 module.exports = {
 	registerValidationSchema,
 	taskCreateValidationSchema,
+	validation,
 };
