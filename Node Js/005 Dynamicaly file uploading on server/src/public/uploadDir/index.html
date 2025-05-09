@@ -7,5 +7,12 @@
 </head>
 
 <body>
-	<form action="/upload" method="POST" enctype="multipart/form-data"></form>
+	<form action="/upload" method="POST" enctype="multipart/form-data">
+		<label for="type">Select Image Type:</label>
+		<select name="type" id="type">
+			<option value="profile">Profile Picture</option>
+			<option value="post">Post Picture</option>
+			<option value="cover">Cover Picture</option>
+		</select>
+	</form>
 </body>
