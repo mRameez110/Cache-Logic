@@ -8,3 +8,6 @@ const taskRouteV1 = require("./api/v1/routes/taskRoute");
 
 const userRouteV2 = require("./api/v2/routes/userRoute");
 const taskRouteV2 = require("./api/v2/routes/taskRoute");
+
+const errorHandler = require("./middlewares/errorHandler");
+const { RouteNotFoundError } = require("./utils/constants/errors/errorClass");
