@@ -14,3 +14,9 @@ const { RouteNotFoundError } = require("./utils/constants/errors/errorClass");
 
 const connectDB = require("./utils/helper/db/connection");
 connectDB();
+
+app.use(helmet());
+app.use(cors());
+app.use(compression());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
