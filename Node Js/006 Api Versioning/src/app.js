@@ -26,3 +26,4 @@ const PORT = process.env.PORT || 3001;
 app.use("/api/v1/users", userRouteV1);
 app.use("/api/v1/tasks", taskRouteV1);
 app.use("/api/v2/users", userRouteV2);
+app.use("/api/v2/tasks", taskRouteV2);
