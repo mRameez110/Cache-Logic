@@ -31,3 +31,5 @@ app.use("/api/v2/tasks", taskRouteV2);
 app.all("*", (req, res) => {
 	throw new RouteNotFoundError();
 });
+
+app.use(errorHandler);
