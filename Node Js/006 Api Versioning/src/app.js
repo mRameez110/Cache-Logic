@@ -11,3 +11,6 @@ const taskRouteV2 = require("./api/v2/routes/taskRoute");
 
 const errorHandler = require("./middlewares/errorHandler");
 const { RouteNotFoundError } = require("./utils/constants/errors/errorClass");
+
+const connectDB = require("./utils/helper/db/connection");
+connectDB();
