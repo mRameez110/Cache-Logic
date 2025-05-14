@@ -5,3 +5,5 @@ const {
 	getAllUsers,
 	getUserByUserName,
 } = require("../controllers/userController");
+
+router.get("/getUsers", getAllUsers);
