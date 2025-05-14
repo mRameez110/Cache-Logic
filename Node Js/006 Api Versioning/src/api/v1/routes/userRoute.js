@@ -7,3 +7,4 @@ const {
 } = require("../controllers/userController");
 
 router.get("/getUsers", getAllUsers);
+router.post("/createUser", createUser);
