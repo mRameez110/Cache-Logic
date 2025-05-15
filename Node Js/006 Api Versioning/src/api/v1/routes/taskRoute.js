@@ -8,3 +8,4 @@ const {
 } = require("../controllers/taskController");
 
 router.get("/allTasks", getAllTasks);
+router.post("/createTask", createTask);
