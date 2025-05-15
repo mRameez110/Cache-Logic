@@ -6,3 +6,5 @@ const {
 	getAllTasks,
 	getTaskByUsername,
 } = require("../controllers/taskController");
+
+router.get("/allTasks", getAllTasks);
