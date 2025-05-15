@@ -9,3 +9,4 @@ const {
 
 router.get("/allTasks", getAllTasks);
 router.post("/createTask", createTask);
+router.get("/task/:username", getTaskByUsername);
