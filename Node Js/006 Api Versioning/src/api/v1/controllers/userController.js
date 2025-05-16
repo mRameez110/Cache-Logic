@@ -8,4 +8,9 @@ const {
 	validation,
 } = require("../../../utils/validations/validations");
 
-const createUser = async (req, res, next) => {};
+const createUser = async (req, res, next) => {
+	try {
+	} catch (err) {
+		next(err);
+	}
+};
