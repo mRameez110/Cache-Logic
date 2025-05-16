@@ -48,3 +48,5 @@ const getUserByUserName = async (req, res, next) => {
 		next(error);
 	}
 };
+
+module.exports = { createUser, getAllUsers, getUserByUserName };
