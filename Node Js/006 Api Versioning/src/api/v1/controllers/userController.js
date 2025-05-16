@@ -35,4 +35,9 @@ const getAllUsers = async (req, res, next) => {
 	}
 };
 
-const getUserByUserName = async (req, res, next) => {};
+const getUserByUserName = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
