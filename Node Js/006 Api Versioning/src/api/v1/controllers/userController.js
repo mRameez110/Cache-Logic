@@ -10,6 +10,11 @@ const {
 
 const createUser = async (req, res, next) => {
 	try {
+    validation(req.body, registerValidationSchema);
+bash
+Copy
+Edit
+
 	} catch (err) {
 		next(err);
 	}
