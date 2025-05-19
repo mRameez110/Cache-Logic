@@ -18,4 +18,9 @@ const {
 	validation,
 } = require("../../../utils/validations/validations");
 
-const createTask = async (req, res, next) => {};
+const createTask = async (req, res, next) => {
+	try {
+	} catch (err) {
+		next(err);
+	}
+};
