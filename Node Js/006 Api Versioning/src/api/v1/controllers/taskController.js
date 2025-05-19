@@ -23,6 +23,13 @@ const createTask = async (req, res, next) => {
 		validation(req.body, taskCreateValidationSchema);
 		const newTask = await createTaskService(req.body);
 		const { title, description, createdBy, assignedTo } = newTask;
+		console.log(
+			"new task created detail is",
+			title,
+			description,
+			createdBy,
+			assignedTo
+		);
 	} catch (err) {
 		next(err);
 	}
