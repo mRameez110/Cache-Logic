@@ -20,6 +20,7 @@ const {
 
 const createTask = async (req, res, next) => {
 	try {
+		validation(req.body, taskCreateValidationSchema);
 	} catch (err) {
 		next(err);
 	}
