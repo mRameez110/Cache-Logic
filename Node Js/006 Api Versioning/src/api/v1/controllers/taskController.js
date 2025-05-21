@@ -83,3 +83,5 @@ const getTaskByUsername = async (req, res, next) => {
 		next(error);
 	}
 };
+
+module.exports = { createTask};
