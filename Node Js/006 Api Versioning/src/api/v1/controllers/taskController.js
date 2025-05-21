@@ -31,6 +31,7 @@ const createTask = async (req, res, next) => {
 			assignedTo
 		);
 		const assignedUser = await userModel.findOne({ username: assignedTo });
+		console.log("Task assigned to details ", assignedUser);
 	} catch (err) {
 		next(err);
 	}
