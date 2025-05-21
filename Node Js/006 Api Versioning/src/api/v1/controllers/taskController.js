@@ -40,14 +40,19 @@ const createTask = async (req, res, next) => {
 			description,
 			createdBy,
 			assignedTo
-		).then((response) => {
-			console.log("Email sended successfully", response);
-			res.status(201).json({
-				status: true,
-				message: "Task created successfully using version 1 api",
-				task: newTask,
+		)
+			.then((response) => {
+				console.log("Email sended successfully", response);
+				res.status(201).json({
+					status: true,
+					message: "Task created successfully using version 1 api",
+					task: newTask,
+				});
+			})
+			.catch((err) => {
+				console.log("Error in sending Email to user or client", err);
+				next(err);
 			});
-		});
 	} catch (err) {
 		next(err);
 	}
