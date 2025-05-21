@@ -1,8 +1,3 @@
-const { createTaskService } = require("../../../services/taskService");
-const {
-	createTaskService,
-	getAllTasksService,
-} = require("../../../services/taskService");
 const {
 	createTaskService,
 	getAllTasksService,
@@ -12,17 +7,17 @@ const userModel = require("../../../models/userModel");
 const { sendEmail } = require("../../../services/emailService");
 const {
 	taskCreateValidationSchema,
-} = require("../../../utils/validations/validations");
-const {
-	taskCreateValidationSchema,
 	validation,
 } = require("../../../utils/validations/validations");
 
 const createTask = async (req, res, next) => {
 	try {
 		validation(req.body, taskCreateValidationSchema);
+
 		const newTask = await createTaskService(req.body);
+
 		const { title, description, createdBy, assignedTo } = newTask;
+
 		console.log(
 			"new task created detail is",
 			title,
@@ -30,9 +25,13 @@ const createTask = async (req, res, next) => {
 			createdBy,
 			assignedTo
 		);
-		const assignedUser = await userModel.findOne({ username: assignedTo });
+
+		const assignedUser = await userModel.findOne({
+			username: assignedTo,
+		});
 		console.log("Task assigned to details ", assignedUser);
 		const receiverMail = assignedUser.email;
+
 		sendEmail(
 			receiverMail,
 			"Task Notification",
@@ -61,6 +60,7 @@ const createTask = async (req, res, next) => {
 const getAllTasks = async (req, res, next) => {
 	try {
 		const tasks = await getAllTasksService();
+
 		res.status(200).send({
 			status: true,
 			message: "All task List is below",
