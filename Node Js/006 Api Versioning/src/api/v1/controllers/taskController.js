@@ -71,4 +71,9 @@ const getAllTasks = async (req, res, next) => {
 	}
 };
 
-const getTaskByUsername = async (req, res, next) => {};
+const getTaskByUsername = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
