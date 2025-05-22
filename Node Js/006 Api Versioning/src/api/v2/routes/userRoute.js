@@ -8,3 +8,5 @@ const {
 
 router.get("/getUsers", getAllUsers);
 router.get("/user/:username", getUserByUserName);
+
+module.exports = router;
