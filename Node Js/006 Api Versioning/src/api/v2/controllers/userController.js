@@ -24,6 +24,7 @@ const createUser = async (req, res, next) => {
 
 const getAllUsers = async (req, res, next) => {
 	try {
+		const users = await getAllUsersService();
 	} catch (error) {
 		next(error);
 	}
