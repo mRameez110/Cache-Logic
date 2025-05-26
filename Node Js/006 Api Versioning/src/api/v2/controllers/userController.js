@@ -25,6 +25,11 @@ const createUser = async (req, res, next) => {
 const getAllUsers = async (req, res, next) => {
 	try {
 		const users = await getAllUsersService();
+		res.status(200).json({
+			status: true,
+			message: "All user request successful",
+			data: users,
+		});
 	} catch (error) {
 		next(error);
 	}
