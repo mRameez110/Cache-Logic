@@ -10,6 +10,7 @@ const {
 
 const createUser = async (req, res, next) => {
 	try {
+		validation(req.body, registerValidationSchema);
 	} catch (err) {
 		next(err);
 	}
