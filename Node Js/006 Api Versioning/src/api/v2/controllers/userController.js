@@ -22,4 +22,9 @@ const createUser = async (req, res, next) => {
 	}
 };
 
-const getAllUsers = async (req, res, next) => {};
+const getAllUsers = async (req, res, next) => {
+	try {
+	} catch (error) {
+		next(error);
+	}
+};
