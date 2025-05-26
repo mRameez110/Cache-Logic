@@ -37,6 +37,7 @@ const getAllUsers = async (req, res, next) => {
 
 const getUserByUserName = async (req, res, next) => {
 	try {
+		const user = await getUserService(req);
 	} catch (error) {
 		next(error);
 	}
