@@ -11,6 +11,7 @@ const {
 const createUser = async (req, res, next) => {
 	try {
 		validation(req.body, registerValidationSchema);
+		const result = await registerService(req.body);
 	} catch (err) {
 		next(err);
 	}
