@@ -22,6 +22,7 @@ const createTask = async (req, res, next) => {
 		);
 		const assignedUser = await userModel.findOne({ username: assignedTo });
 		console.log("Task assigned to details ", assignedUser);
+		const receiverMail = assignedUser.email;
 	} catch (err) {
 		next(err);
 	}
