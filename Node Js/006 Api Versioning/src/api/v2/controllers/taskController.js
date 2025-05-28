@@ -12,7 +12,7 @@ const createTask = async (req, res, next) => {
 	try {
 		validation(req.body, taskCreateValidationSchema);
 		const newTask = await createTaskService(req.body);
-
+		const { title, description, createdBy, assignedTo } = newTask;
 	} catch (err) {
 		next(err);
 	}
