@@ -20,7 +20,7 @@ const createTask = async (req, res, next) => {
 			createdBy,
 			assignedTo
 		);
-		
+		const assignedUser = await userModel.findOne({ username: assignedTo });
 	} catch (err) {
 		next(err);
 	}
