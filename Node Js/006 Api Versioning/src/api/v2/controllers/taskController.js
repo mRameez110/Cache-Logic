@@ -74,4 +74,4 @@ const getTaskByUsername = async (req, res, next) => {
 	}
 };
 
-module.exports = { createTask, getAllTasks };
+module.exports = { createTask, getAllTasks, getTaskByUsername };
