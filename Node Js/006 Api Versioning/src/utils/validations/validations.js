@@ -7,3 +7,5 @@ const registerValidationSchema = joi
 		password: joi.string().min(1).required(),
 	})
 	.options({ abortEarly: true });
+
+  const taskCreateValidationSchema = joi.object({}).options({ abortEarly: true });
