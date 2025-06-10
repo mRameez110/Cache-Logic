@@ -8,4 +8,8 @@ const registerValidationSchema = joi
 	})
 	.options({ abortEarly: true });
 
-  const taskCreateValidationSchema = joi.object({}).options({ abortEarly: true });
+const taskCreateValidationSchema = joi
+	.object({
+		title: joi.string().min(5).max(15).trim().required(),
+	})
+	.options({ abortEarly: true });
