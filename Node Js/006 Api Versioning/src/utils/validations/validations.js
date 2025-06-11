@@ -17,7 +17,9 @@ const taskCreateValidationSchema = joi
 	})
 	.options({ abortEarly: true });
 
-	const validation = (dataObject, validationSchema) => {
-		const { error } = validationSchema.validate(dataObject);
-	};
-	
+const validation = (dataObject, validationSchema) => {
+	const { error } = validationSchema.validate(dataObject);
+	if (error) {
+		throw new Error(error.details[0].message);
+	}
+};
