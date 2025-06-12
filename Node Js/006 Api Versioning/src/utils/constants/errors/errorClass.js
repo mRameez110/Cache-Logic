@@ -35,4 +35,5 @@ module.exports = {
 	RouteNotFoundError,
 	UserAlreadyExistError,
 	BadRequestError,
+	MailError,
 };
