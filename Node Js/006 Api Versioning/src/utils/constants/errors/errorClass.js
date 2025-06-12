@@ -5,3 +5,9 @@ class AppError extends Error {
 		this.errorCode = errorCode;
 	}
 }
+
+class RouteNotFoundError extends AppError {
+	constructor(message = "Route does't exist", errorCode = 404) {
+		super(message, errorCode);
+	}
+}
