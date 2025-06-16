@@ -11,3 +11,4 @@ p><strong>Task Assigned To:</strong> ${assignedTo}</p>
 
 </div>
 `;
+module.exports = { taskMailTemplate };
