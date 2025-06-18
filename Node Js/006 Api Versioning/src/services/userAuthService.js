@@ -25,3 +25,4 @@ const registerNewUser = new userModel({
   password: hashPassword,
 });
 const user = await registerNewUser.save();
+return user;
