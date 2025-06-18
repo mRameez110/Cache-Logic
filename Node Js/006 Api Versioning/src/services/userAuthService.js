@@ -24,3 +24,4 @@ const registerNewUser = new userModel({
   email,
   password: hashPassword,
 });
+const user = await registerNewUser.save();
