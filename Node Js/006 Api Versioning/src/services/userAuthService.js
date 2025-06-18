@@ -15,3 +15,6 @@ const userEmailAlreadyExist = await userModel.findOne({ email });
 if (userEmailAlreadyExist) {
   throw new UserAlreadyExistError("Email already in use", 400);
 }
+
+const saltRounds = 10;
+const hashPassword = await bcrypt.hash(password, saltRounds);
