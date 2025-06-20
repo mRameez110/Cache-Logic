@@ -33,3 +33,7 @@ const getAllUsersService = async () => {
 	if (!users) throw new BadRequestError("Not get the users");
 	return users;
 };
+
+const getUserService = async (dataObject) => {
+	
+}
