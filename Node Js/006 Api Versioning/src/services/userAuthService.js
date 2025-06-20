@@ -41,4 +41,4 @@ const getUserService = async (dataObject) => {
 	return user;
 };
 
-module.exports = { registerService, getAllUsersService };
+module.exports = { registerService, getAllUsersService, getUserService };
