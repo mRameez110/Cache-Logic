@@ -40,3 +40,5 @@ const getUserService = async (dataObject) => {
 	const user = await userModel.findOne({ username: userName });
 	return user;
 };
+
+module.exports = { registerService };
