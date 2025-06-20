@@ -35,5 +35,5 @@ const getAllUsersService = async () => {
 };
 
 const getUserService = async (dataObject) => {
-	
-}
+	const userName = dataObject.params.username;
+};
