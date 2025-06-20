@@ -27,3 +27,5 @@ const registerService = async (dataObject) => {
 	const user = await registerNewUser.save();
 	return user;
 };
+
+const getAllUsersService = async () => {
