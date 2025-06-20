@@ -36,4 +36,6 @@ const getAllUsersService = async () => {
 
 const getUserService = async (dataObject) => {
 	const userName = dataObject.params.username;
+	console.log("See data of body ", userName);
+	const user = await userModel.findOne({ username: userName });
 };
