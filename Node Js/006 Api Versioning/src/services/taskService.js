@@ -10,8 +10,12 @@ const createTaskService = async (dataObject) => {
 			"Your are not register. first register to create task",
 			400
 		);
-    const findTaskAssignedUser = await userModel.findOne({
-      username: assignedTo,
-    });
-    if (!findTaskAssignedUser)
+	const findTaskAssignedUser = await userModel.findOne({
+		username: assignedTo,
+	});
+	if (!findTaskAssignedUser)
+		throw new BadRequestError(
+			"Assigned user name does't exist. Username must exist to assign task",
+			400
+		);
 };
