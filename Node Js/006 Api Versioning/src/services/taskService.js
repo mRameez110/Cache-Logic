@@ -13,5 +13,5 @@ const createTaskService = async (dataObject) => {
     const findTaskAssignedUser = await userModel.findOne({
       username: assignedTo,
     });
-    
+    if (!findTaskAssignedUser)
 };
