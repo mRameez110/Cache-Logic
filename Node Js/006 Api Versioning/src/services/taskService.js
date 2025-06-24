@@ -25,4 +25,5 @@ const createTaskService = async (dataObject) => {
 		assignedTo,
 	});
 	await newTask.save();
+	return newTask;
 };
