@@ -29,6 +29,5 @@ const createTaskService = async (dataObject) => {
 };
 
 const getAllTasksService = async () => {
-	
-}
-
+	const tasks = await taskModel.find();
+};
