@@ -18,4 +18,10 @@ const createTaskService = async (dataObject) => {
 			"Assigned user name does't exist. Username must exist to assign task",
 			400
 		);
+	const newTask = new taskModel({
+		title,
+		description,
+		createdBy,
+		assignedTo,
+	});
 };
