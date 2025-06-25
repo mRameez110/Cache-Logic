@@ -39,4 +39,5 @@ const getTaskService = async (dataObject) => {
 		createdBy: dataObject.params.username,
 	});
 	console.log("See username for task ", taskCratedBy);
+	if (taskCratedBy) return taskCratedBy;
 };
