@@ -50,4 +50,5 @@ const getTaskService = async (dataObject) => {
 module.exports = {
 	createTaskService,
 	getAllTasksService,
+	 getTaskService,
 };
