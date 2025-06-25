@@ -38,4 +38,5 @@ const getTaskService = async (dataObject) => {
 	const taskCratedBy = await taskModel.findOne({
 		createdBy: dataObject.params.username,
 	});
+	console.log("See username for task ", taskCratedBy);
 };
