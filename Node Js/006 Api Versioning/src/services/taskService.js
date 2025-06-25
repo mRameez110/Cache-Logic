@@ -40,4 +40,7 @@ const getTaskService = async (dataObject) => {
 	});
 	console.log("See username for task ", taskCratedBy);
 	if (taskCratedBy) return taskCratedBy;
+	const taskAssignedUsername = await taskModel.findOne({
+		assignedTo: dataObject.params.username,
+	});
 };
