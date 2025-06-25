@@ -33,3 +33,7 @@ const getAllTasksService = async () => {
 	if (!tasks) throw new BadRequestError("Not task exist", 400);
 	return tasks;
 };
+
+const getTaskService = async (dataObject) => {
+	
+}
