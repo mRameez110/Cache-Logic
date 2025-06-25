@@ -47,7 +47,7 @@ const getTaskService = async (dataObject) => {
 	throw new BadRequestError("username does't exist", 400);
 };
 
-
 module.exports = {
-  createTaskService
+	createTaskService,
+	getAllTasksService,
 };
