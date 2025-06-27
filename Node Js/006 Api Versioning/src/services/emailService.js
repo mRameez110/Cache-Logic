@@ -16,3 +16,4 @@ const foundedImage = imageFiles.find(
 		path.basename(file, path.extname(file)).toLowerCase() ===
 		"logo".toLowerCase()
 );
+const foundedImagePath = path.join(imageDirective, foundedImage);
