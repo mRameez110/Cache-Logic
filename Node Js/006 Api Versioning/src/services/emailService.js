@@ -17,3 +17,6 @@ const foundedImage = imageFiles.find(
 		"logo".toLowerCase()
 );
 const foundedImagePath = path.join(imageDirective, foundedImage);
+const imageIntoBase64 = fs.readFileSync(foundedImagePath, {
+	encoding: "base64",
+});
