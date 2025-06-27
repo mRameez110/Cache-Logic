@@ -9,3 +9,4 @@ const emailTemplateSource = fs.readFileSync(
 	path.join(__dirname, "../utils/helper/mailTemplate.hbs"),
 	"utf8"
 );
+const imageDirective = path.join(__dirname, "../public");
