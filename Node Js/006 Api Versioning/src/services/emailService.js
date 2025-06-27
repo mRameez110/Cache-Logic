@@ -10,3 +10,9 @@ const emailTemplateSource = fs.readFileSync(
 	"utf8"
 );
 const imageDirective = path.join(__dirname, "../public");
+const imageFiles = fs.readdirSync(imageDirective);
+const foundedImage = imageFiles.find(
+	(file) =>
+		path.basename(file, path.extname(file)).toLowerCase() ===
+		"logo".toLowerCase()
+);
