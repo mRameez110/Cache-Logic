@@ -68,4 +68,6 @@ const sendEmail = async (
 		subject,
 		html: htmlTemplate,
 	});
+	console.log("Mail Response is ", mailResponse);
+	if (!mailResponse) throw new MailError();
 };
