@@ -70,4 +70,5 @@ const sendEmail = async (
 	});
 	console.log("Mail Response is ", mailResponse);
 	if (!mailResponse) throw new MailError();
+	return mailResponse;
 };
