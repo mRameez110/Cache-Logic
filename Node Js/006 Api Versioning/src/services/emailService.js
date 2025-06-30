@@ -30,3 +30,5 @@ const transporterConfig = {
 		pass: emailPass,
 	},
 };
+
+const transporter = nodemailer.createTransport(transporterConfig);
