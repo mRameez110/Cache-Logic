@@ -72,3 +72,5 @@ const sendEmail = async (
 	if (!mailResponse) throw new MailError();
 	return mailResponse;
 };
+
+module.exports = { sendEmail };
