@@ -20,3 +20,6 @@ const foundedImagePath = path.join(imageDirective, foundedImage);
 const imageIntoBase64 = fs.readFileSync(foundedImagePath, {
 	encoding: "base64",
 });
+
+const emailUser = process.env.EMAIL_USER;
+const emailPass = process.env.EMAIL_PASS;
