@@ -49,4 +49,6 @@ const sendEmail = async (
 		createdBy,
 		assignedTo
 	);
+	const from = transporter.options.auth.user;
+	console.log("Transporter check ", from);
 };
