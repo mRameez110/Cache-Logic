@@ -23,3 +23,10 @@ const imageIntoBase64 = fs.readFileSync(foundedImagePath, {
 
 const emailUser = process.env.EMAIL_USER;
 const emailPass = process.env.EMAIL_PASS;
+const transporterConfig = {
+	service: "gmail",
+	auth: {
+		user: emailUser,
+		pass: emailPass,
+	},
+};
