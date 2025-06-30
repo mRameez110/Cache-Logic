@@ -32,3 +32,12 @@ const transporterConfig = {
 };
 
 const transporter = nodemailer.createTransport(transporterConfig);
+const sendEmail = async (
+  to,
+  subject,
+  title,
+  description,
+  createdBy,
+  assignedTo
+) => {}
+
