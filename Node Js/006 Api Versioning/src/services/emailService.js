@@ -62,4 +62,10 @@ const sendEmail = async (
 		assignedTo,
 	});
 	console.log("check generated html ", htmlTemplate);
+	const mailResponse = await transporter.sendMail({
+		from,
+		to,
+		subject,
+		html: htmlTemplate,
+	});
 };
