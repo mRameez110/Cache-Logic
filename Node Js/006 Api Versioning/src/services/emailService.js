@@ -33,11 +33,20 @@ const transporterConfig = {
 
 const transporter = nodemailer.createTransport(transporterConfig);
 const sendEmail = async (
-  to,
-  subject,
-  title,
-  description,
-  createdBy,
-  assignedTo
-) => {}
-
+	to,
+	subject,
+	title,
+	description,
+	createdBy,
+	assignedTo
+) => {
+	console.log(
+		"Mail body data ",
+		to,
+		subject,
+		title,
+		description,
+		createdBy,
+		assignedTo
+	);
+};
