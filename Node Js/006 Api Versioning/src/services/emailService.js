@@ -51,4 +51,6 @@ const sendEmail = async (
 	);
 	const from = transporter.options.auth.user;
 	console.log("Transporter check ", from);
+	const emailTemplateCompile = handlebars.compile(emailTemplateSource);
+	console.log("Check email template after compile ", emailTemplateCompile);
 };
