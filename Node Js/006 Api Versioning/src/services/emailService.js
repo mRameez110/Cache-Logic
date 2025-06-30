@@ -53,4 +53,12 @@ const sendEmail = async (
 	console.log("Transporter check ", from);
 	const emailTemplateCompile = handlebars.compile(emailTemplateSource);
 	console.log("Check email template after compile ", emailTemplateCompile);
+	const htmlTemplate = emailTemplateCompile({
+		subject,
+		logo: `data:image/jpeg;base64,${imageIntoBase64}`,
+		title,
+		description,
+		createdBy,
+		assignedTo,
+	});
 };
