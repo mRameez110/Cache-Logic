@@ -61,4 +61,5 @@ const sendEmail = async (
 		createdBy,
 		assignedTo,
 	});
+	console.log("check generated html ", htmlTemplate);
 };
