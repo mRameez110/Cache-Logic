@@ -6,3 +6,6 @@ console.log("Outside setTime ", timeId);
 setInterval(() => {
 	console.log("Hello");
 }, 2000);
+
+const EventEmitter = require("node:events");
+const eventEmitter = new EventEmitter();
