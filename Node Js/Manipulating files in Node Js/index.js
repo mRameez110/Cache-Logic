@@ -13,3 +13,5 @@ const eventEmitter = new EventEmitter();
 eventEmitter.on("start", () => {
 	console.log("This event is emitted");
 });
+
+eventEmitter.emit("start");	
