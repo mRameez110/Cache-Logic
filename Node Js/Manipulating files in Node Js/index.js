@@ -14,4 +14,6 @@ eventEmitter.on("start", () => {
 	console.log("This event is emitted");
 });
 
-eventEmitter.emit("start");	
+eventEmitter.emit("start");
+
+const fs = require("node:fs/promises");
