@@ -57,3 +57,4 @@ async function example() {
     console.error("Error is", err);
   }
 }
+example();
