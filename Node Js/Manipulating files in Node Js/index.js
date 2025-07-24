@@ -53,5 +53,7 @@ async function example() {
   try {
     const res = await fs.stat("./data.txt");
     console.log(res.isFile());
-  } catch (err) {}
+  } catch (err) {
+    console.error("Error is", err);
+  }
 }
