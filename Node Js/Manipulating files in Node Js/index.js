@@ -46,3 +46,5 @@ eventEmitter.on("start", () => {
 });
 
 eventEmitter.emit("start");
+
+const fs = require("node:fs/promises");
