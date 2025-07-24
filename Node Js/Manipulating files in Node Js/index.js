@@ -48,3 +48,9 @@ eventEmitter.on("start", () => {
 eventEmitter.emit("start");
 
 const fs = require("node:fs/promises");
+
+async function example() {
+  try {
+    const res = await fs.stat("./data.txt");
+  } catch (err) {}
+}
