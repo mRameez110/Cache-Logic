@@ -29,23 +29,23 @@
 
 // example();
 
-const fs = require("fs");
-const path = require("path");
+// const fs = require("fs");
+// const path = require("path");
 
-console.log("Outside setTime ", timeId);
+// console.log("Outside setTime ", timeId);
 
-setInterval(() => {
-  console.log("Hello");
-}, 2000);
+// setInterval(() => {
+//   console.log("Hello");
+// }, 2000);
 
-const EventEmitter = require("node:events");
-const eventEmitter = new EventEmitter();
+// const EventEmitter = require("node:events");
+// const eventEmitter = new EventEmitter();
 
-eventEmitter.on("start", () => {
-  console.log("This event is emitted");
-});
+// eventEmitter.on("start", () => {
+//   console.log("This event is emitted");
+// });
 
-eventEmitter.emit("start");
+// eventEmitter.emit("start");
 
 // const fs = require("node:fs/promises");
 // async function example() {
