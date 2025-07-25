@@ -62,4 +62,6 @@ const fs = require("fs");
 const path = require("path");
 
 const info = "./data.txt";
+
 console.log(path.dirname(info));
+console.log(path.basename(info));
