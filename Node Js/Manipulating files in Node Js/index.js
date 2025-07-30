@@ -67,4 +67,6 @@ console.log(path.dirname(info));
 console.log(path.basename(info));
 console.log(path.extname(info));
 
-fs.open("./data.txt", "r", (err, fileDescriptor) => {});
+fs.open("./data.txt", "r", (err, fileDescriptor) => {
+  console.log("File description is", fileDescriptor);
+});
