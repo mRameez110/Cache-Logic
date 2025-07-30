@@ -70,3 +70,6 @@ console.log(path.extname(info));
 fs.open("./data.txt", "r", (err, fileDescriptor) => {
   console.log("File description is", fileDescriptor);
 });
+
+let arr = [1, 2, 3, 4, 5];
+
