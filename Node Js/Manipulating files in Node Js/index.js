@@ -66,3 +66,5 @@ const info = "./data.txt";
 console.log(path.dirname(info));
 console.log(path.basename(info));
 console.log(path.extname(info));
+
+fs.open("./data.txt", "r", (err, fileDescriptor) => {});
