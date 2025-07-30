@@ -78,3 +78,4 @@ let arr3 = arr.forEach((ele) => {
   return ele;
 });
 
+console.log(arr3);
