@@ -73,3 +73,8 @@ fs.open("./data.txt", "r", (err, fileDescriptor) => {
 
 let arr = [1, 2, 3, 4, 5];
 
+let arr3 = arr.forEach((ele) => {
+  console.count(ele);
+  return ele;
+});
+
