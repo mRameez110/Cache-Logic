@@ -86,6 +86,8 @@ function check() {
 
 check();
 
-function checkTime() {}
+function checkTime() {
+  console.log("This is function for execution time check");
+}
 
 console.time("checkTime()");
