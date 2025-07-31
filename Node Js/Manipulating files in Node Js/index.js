@@ -91,3 +91,4 @@ function checkTime() {
 }
 
 console.time("checkTime()");
+checkTime();
