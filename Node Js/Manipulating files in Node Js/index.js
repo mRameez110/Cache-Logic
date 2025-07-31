@@ -93,3 +93,5 @@ function checkTime() {
 console.time("checkTime()");
 checkTime();
 console.timeEnd("checkTime()");
+
+const color = require("chalk");
