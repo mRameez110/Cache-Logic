@@ -95,3 +95,4 @@ checkTime();
 console.timeEnd("checkTime()");
 
 const color = require("chalk");
+console.log(color.yellow("Hello"));
