@@ -86,7 +86,6 @@ function check() {
 
 check();
 
-function checkTime() {
+function checkTime() {}
 
-}
-
+console.time("checkTime()");
