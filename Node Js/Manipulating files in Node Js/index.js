@@ -92,3 +92,4 @@ function checkTime() {
 
 console.time("checkTime()");
 checkTime();
+console.timeEnd("checkTime()");
