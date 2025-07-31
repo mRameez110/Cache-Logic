@@ -81,7 +81,7 @@ let arr3 = arr.forEach((ele) => {
 console.log(arr3);
 
 function check() {
-  
+  console.trace();
 }
 
 check();
